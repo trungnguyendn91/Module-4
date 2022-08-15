@@ -17,7 +17,7 @@
     <input type="number" name="usd" id="usd" value="${usd}"/>
     <button type="submit">Change Money</button>
 </form>
-<p>Số tiền VND là</p>
+<p>Số tiền VND là :</p>
 <p>${vnd}</p>
 </body>
 </html>
