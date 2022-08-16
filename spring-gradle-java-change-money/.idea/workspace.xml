@@ -10,7 +10,146 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63412ac2-ca59-42e1-a3db-f6f3e60af7c0" name="Default Changelist" comment="" />
+    <list default="true" id="63412ac2-ca59-42e1-a3db-f6f3e60af7c0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/build/classes/java/main/com/example/AppConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/build/classes/java/main/com/example/AppInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/build/classes/java/main/com/example/controller/ChangeMoneyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/build/libs/greeting-gradle-java-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/src/main/java/com/example/AppConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/src/main/java/com/example/AppInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/src/main/java/com/example/controller/ChangeMoneyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money/src/main/webapp/WEB-INF/views/ChangeMoney.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/build/classes/java/main/com/example/config/AppConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/build/classes/java/main/com/example/config/AppInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/build/classes/java/main/com/example/controller/DictionaryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/build/classes/java/main/com/example/repository/ITranslateRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/build/classes/java/main/com/example/repository/impl/TranslateRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/build/classes/java/main/com/example/service/ITranslate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/build/classes/java/main/com/example/service/impl/Translate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/build/libs/greeting-gradle-java-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/src/main/java/com/example/config/AppConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/src/main/java/com/example/config/AppInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/src/main/java/com/example/controller/DictionaryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/src/main/java/com/example/repository/ITranslateRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/src/main/java/com/example/repository/impl/TranslateRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/src/main/java/com/example/service/ITranslate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/src/main/java/com/example/service/impl/Translate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-tu-dien/src/main/webapp/WEB-INF/views/dictionary.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/6.1/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/6.1/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/.idea/webContexts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/build/classes/java/main/com/example/AppConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/build/classes/java/main/com/example/AppInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/build/classes/java/main/com/example/controller/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/build/classes/java/main/com/example/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/build/classes/java/main/com/example/service/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/build/classes/java/main/com/example/service/CustomerServiceFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/build/classes/java/main/com/example/service/impl/SimpleCustomerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/build/libs/greeting-gradle-java-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/src/main/java/com/example/AppConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/src/main/java/com/example/AppInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/src/main/java/com/example/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/src/main/java/com/example/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/src/main/java/com/example/service/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/src/main/java/com/example/service/CustomerServiceFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/src/main/java/com/example/service/impl/SimpleCustomerServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/src/main/webapp/WEB-INF/views/info.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss1_tong_quan_springMVC/thuc_hanh/spring-gradle-java-quan-ly-customer/src/main/webapp/WEB-INF/views/list.jsp" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +191,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ss1_tong_quan_springMVC/bai_tap/spring-gradle-java-change-money" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ss1_tong_quan_springMVC/exercise/spring-gradle-java-change-money" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -209,6 +348,7 @@
       <updated>1660277380436</updated>
       <workItem from="1660277387816" duration="844000" />
       <workItem from="1660293028241" duration="5895000" />
+      <workItem from="1660620304313" duration="48000" />
     </task>
     <servers />
   </component>
@@ -240,10 +380,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1660293095716" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1660298981802">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1660620350513">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1660298981802" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1660620350513" />
     <state width="905" height="245" key="GridCell.Tab.0.bottom" timestamp="1660298985202">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
