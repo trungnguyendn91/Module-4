@@ -1,7 +1,11 @@
-package com.example.repository.impl;
+package com.example.repository;
 
 import com.example.model.People;
 
+import java.util.List;
+
 public interface IPeopleRepository {
-    People findById (String)
+    People findById (Integer id);
+    List<People> findAll();
+    void save(People peopleObj);
 }
