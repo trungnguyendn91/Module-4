@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form:form method="POST" action="addSetting" modelAttribute="Medical" cssStyle="text-align: center">
+<form:form method="POST" action="save" modelAttribute="medical" cssStyle="text-align: center">
     <H4>TỜ KHAI Y TẾ</H4>
     <h6>ĐÂY LÀ TÀI LIỆU QUAN TRỌNG,THÔNG TIN CỦA ANH/CHỊ SẼ GIÚP CƠ QUAN Y TẾ LIÊN LẠC KHI CẦN THIẾT ĐỂ PHÒNG CHỐNG DỊCH BỆNH TRUYỀN NHIỄM</h6>
     <h9 style="color: red" >Khuyến cáo: Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể xử lý hình sự</h9>
@@ -56,7 +56,11 @@
                 </td>
             </tr>
             <tr>
-                <td><input type="submit" value="Update"/></td>
+                <td>Trong 14 Ngày Qua Anh/Chị Có Đến Những Tỉnh/Thành Phố Nào?<sup>*</sup><br>
+                    <form:textarea path="info"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Save"/></td>
                 <td><input type="reset" value="Cancel"/></td>
             </tr>
         </table>

@@ -17,44 +17,44 @@
 <table>
     <tr>
         <td>Họ tên (ghi chữ IN HOA)<br>
-        ${name}</td>
+        ${declaration.name}</td>
     </tr>
     <tr>
         <td>Năm Sinh<sup>*</sup><br>
-            ${year}</td>
+            ${declaration.year}</td>
         <td>Giới Tính<sup>*</sup><br>
-            ${gender}</td>
+            ${declaration.gender}</td>
         <td>Quốc Tịch<sup>*</sup><br>
-            ${nationality}</td>
+            ${declaration.nationality}</td>
     </tr>
     <tr>
         <td>Số Hộ Chiếu Hoặc CMND Hoặc Giấy Thông Hành Hợp Pháp Khác<sup>*</sup><br>
-           ${idCard}</td>
+           ${declaration.idCard}</td>
     </tr>
     <tr>
         <td>Thông Tin Đi Lại<sup>*</sup><br>
-            ${informationVehicle}</td>
+            ${declaration.informationVehicle}</td>
     </tr>
     <tr>
         <td>Số Hiệu Phương Tiện <br>
-            ${vehicleNumber}</td>
+            ${declaration.vehicleNumber}</td>
         <td>Số Ghế
-           ${seatNumber}</td>
+           ${declaration.seatNumber}</td>
     </tr>
     <tr>
         <td>
             Ngày khởi hành  <sup>*</sup>
-            ${startDay}
-            ${startMonth}
-            ${endYear}
+            ${declaration.startDay}
+            ${declaration.startMonth}
+            ${declaration.startYear}
         </td>
     </tr>
     <tr>
         <td>
             Ngày kết thúc  <sup>*</sup>
-            ${endDay}
-            ${endMonth}
-            ${endYear}
+            ${declaration.endDay}
+            ${declaration.endMonth}
+            ${declaration.endYear}
         </td>
     </tr>
 </table>
