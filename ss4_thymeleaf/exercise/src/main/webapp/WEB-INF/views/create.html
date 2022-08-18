@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+<h3>Thêm Sản Phẩm</h3>
+<p>
+    <a th:href="@{/products}">
+        Quay lại danh sách sản phẩm
+    </a>
+</p>
+<div id="form">
+    <form th:action="@{/products/save}" th:object="${products}"
+          method="POST" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Tên sản phẩm</label>
+            <input type="text" th:field="*{productName}"/>
+        </div>
+        <div>
+            <label>Loại sản phẩm</label>
+            <input type="email" th:field="*{type}"/>
+        </div>
+        <div>
+            <label>Nhãn hiệu</label>
+            <input type="text" th:field="*{brand}"/>
+        </div>
+        <div>
+            <label>Xuất xứ</label>
+            <input type="text" th:field="*{country}"/>
+        </div>
+        <div>
+            <label>Giá</label>
+            <input type="text" th:field="*{cost}"/>
+        </div>
+        <input type="submit" value="Save"/>
+    </form>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
