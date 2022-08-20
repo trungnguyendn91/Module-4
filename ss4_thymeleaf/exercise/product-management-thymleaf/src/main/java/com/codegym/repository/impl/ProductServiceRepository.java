@@ -2,6 +2,7 @@ package com.codegym.repository.impl;
 
 import com.codegym.model.Product;
 import com.codegym.repository.IProductRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,8 +22,14 @@ public class ProductServiceRepository implements IProductRepository {
         productList.add(new Product(5,"RedMi Note 14","Smart phone", "Xiaomi", "Taiwan", 12000000));
     }
     @Override
-    public List<Product> findAll() {
-        return productList;
+    public List<Product> findAll(String name) {
+        List<Product> result = new ArrayList<>();
+        for (Product p : productList){
+            if(p.getProductName().toLowerCase().contains(name.toLowerCase())){
+                result.add(p);
+            }
+        }
+        return result;
     }
 
     @Override
@@ -41,27 +48,23 @@ public class ProductServiceRepository implements IProductRepository {
         return product;
     }
 
-    @Override
-    public List<Product> findByName(String name) {
-        List<Product> result = new ArrayList<>();
-        for (Product p : productList){
-            if(p.getProductName().toLowerCase().contains(name.toLowerCase())){
-                result.add(p);
-            }
-        }
-        return result;
-    }
+
+//    public List<Product> findByName(String name) {
+//        List<Product> result = new ArrayList<>();
+//        for (Product p : productList){
+//            if(p.getProductName().toLowerCase().contains(name.toLowerCase())){
+//                result.add(p);
+//            }
+//        }
+//        return result;
+//    }
 
 
     @Override
     public void update(int id, Product product) {
         for (Product p : productList) {
             if (p.getId() == product.getId()) {
-                p.setProductName(product.getProductName());
-                p.setType(product.getType());
-                p.setBrand(product.getBrand());
-                p.setCountry(product.getCountry());
-                p.setCost(product.getCost());
+                BeanUtils.copyProperties(product,p);
             }
         }
     }

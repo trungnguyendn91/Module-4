@@ -18,16 +18,18 @@ public class ProductController {
     private IProduct productService = new ProductService();
 
     @GetMapping
-    public String index(Model model){
-        List<Product> productList = productService.findAll();
+    public String index(Model model, String name){
+        List<Product> productList = productService.findAll(name);
         model.addAttribute("products",productList);
         return"/index";
     }
+
     @GetMapping ("/create")
     public String create(Model model){
         model.addAttribute("products", new Product());
         return "/create";
     }
+
     @PostMapping("/save")
     public String save(Product product, RedirectAttributes redirectAttributes){
         this.productService.save(product);
@@ -60,10 +62,16 @@ public class ProductController {
         model.addAttribute("products", productService.findById(id));
         return "/view";
     }
-    @GetMapping("/search")
-    public String search (@RequestParam String name, Model model){
-        List<Product> productList = productService.findByName(name);
-        model.addAttribute("products",productList);
-        return "/index";
-    }
+
+//    @GetMapping("/search")
+//    public String search (String name, Model model){
+//        if (name!=null){
+//            List<Product> productList = productService.findByName(name);
+//            model.addAttribute("products",productList);
+//        }else {
+//            model.addAttribute("products",productService.findAll());
+//        }
+//
+//        return "/index";
+//    }
 }
