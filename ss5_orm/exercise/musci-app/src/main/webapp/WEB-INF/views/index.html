@@ -19,21 +19,21 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="musicList : ${musicList}">
+    <tr th:each="music : ${musicList}">
 
-        <td th:text="${musicList.musicName}"></td>
+        <td th:text="${music.musicName}"></td>
 
-        <td th:text="${musicList.singleName}"></td>
+        <td th:text="${music.singleName}"></td>
 
         <td>
-            <audio controls th:src="@{'/music-library/' + ${musicList.link}}"></audio>
+            <audio controls th:src="@{'/music-library/' + ${music.link}}"></audio>
         </td>
 
         <td>
-            <button th:href="@{/music/edit(id=${musicList.id})}">edit</button>
+            <button th:href="@{/music/edit(id=${music.id})}">edit</button>
         </td>
         <td>
-            <button th:attr="onclick=|deleteSong(${musicList.id})|" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button th:attr="onclick=|deleteSong(${music.id})|" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Delete
             </button>
         </td>

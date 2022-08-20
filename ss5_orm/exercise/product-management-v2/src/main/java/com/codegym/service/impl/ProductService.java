@@ -23,8 +23,6 @@ public class ProductService implements IProduct {
 
     @Override
     public void save(Product product) {
-        int id = (int) Math.floor(Math.random()*1000);
-        product.setId(id);
         this.iProductRepository.save(product);
     }
 

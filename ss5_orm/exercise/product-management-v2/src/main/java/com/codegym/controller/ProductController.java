@@ -19,7 +19,7 @@ public class ProductController {
 
     @GetMapping
     public String index(@RequestParam(required = false,defaultValue = "") String name,Model model){
-        model.addAttribute("productList", this.productService.findAll(name));
+        model.addAttribute("products", this.productService.findAll(name));
         return"/index";
     }
 
@@ -30,7 +30,8 @@ public class ProductController {
     }
 
     @PostMapping("/save")
-    public String save(Product product, RedirectAttributes redirectAttributes){
+    public String save(@ModelAttribute Product product,
+                       RedirectAttributes redirectAttributes){
         this.productService.save(product);
         redirectAttributes.addFlashAttribute("msg","Thêm thành công");
         return "redirect:/products";
