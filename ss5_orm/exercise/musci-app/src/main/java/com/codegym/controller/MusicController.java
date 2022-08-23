@@ -2,7 +2,7 @@ package com.codegym.controller;
 
 import com.codegym.model.Music;
 import com.codegym.model.MusicForm;
-import com.codegym.service.IMusic;
+import com.codegym.service.IMusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -22,7 +22,7 @@ import java.util.List;
 public class MusicController {
 
     @Autowired
-    private IMusic iMusic;
+    private IMusicService iMusicService;
 
     @Value("${file-upload}")
     private String fileUpload;
@@ -30,7 +30,7 @@ public class MusicController {
     @GetMapping
     public String index(Model model) {
 
-        List<Music> musicList = iMusic.findAll();
+        List<Music> musicList = iMusicService.findAll();
 
         model.addAttribute("musicList", musicList);
 
@@ -61,7 +61,7 @@ public class MusicController {
             ex.printStackTrace();
         }
         Music music = new Music(musicForm.getMusicName(), musicForm.getSingleName(), fileName);
-        iMusic.addMusic(music);
+        iMusicService.addMusic(music);
         ModelAndView modelAndView = new ModelAndView("/create");
         modelAndView.addObject("musicForm", musicForm);
         modelAndView.addObject("message", "Created new product successfully !");
@@ -69,19 +69,19 @@ public class MusicController {
     }
     @GetMapping("/edit")
     public String showEditForm(@RequestParam int id,Model model){
-        model.addAttribute("music",iMusic.findById(id));
+        model.addAttribute("music", iMusicService.findById(id));
         return "/update";
     }
 
     @PostMapping("/edit")
     public  String editMusicInfo(@ModelAttribute Music music) {
-        iMusic.update(music);
+        iMusicService.update(music);
         return "redirect:/music";
 
     }
     @PostMapping("/delete")
     public String delete(@RequestParam int id){
-        iMusic.delete(id);
+        iMusicService.delete(id);
         return "redirect:/music";
     }
 }

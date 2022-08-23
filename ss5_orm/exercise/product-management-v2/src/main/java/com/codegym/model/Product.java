@@ -14,12 +14,12 @@ public class Product {
     private String type;
     private String brand;
     private String country;
-    private int cost;
+    private boolean cost;
 
     public Product() {
     }
 
-    public Product(int id, String productName, String type, String brand, String country, int cost) {
+    public Product(int id, String productName, String type, String brand, String country, boolean cost) {
         this.id = id;
         this.productName = productName;
         this.type = type;
@@ -68,11 +68,11 @@ public class Product {
         this.country = country;
     }
 
-    public int getCost() {
+    public boolean getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(boolean cost) {
         this.cost = cost;
     }
 }

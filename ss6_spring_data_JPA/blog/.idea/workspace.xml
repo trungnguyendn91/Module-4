@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="adb3e18a-1c1e-4c4a-9ce8-3c301b027b87" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/customer-management-stored-procedure/src/main/java/com/codegym/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/customer-management-stored-procedure/src/main/java/com/codegym/config/AppInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/customer-management-stored-procedure/src/main/java/com/codegym/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/customer-management-stored-procedure/src/main/java/com/codegym/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/customer-management-stored-procedure/src/main/java/com/codegym/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/customer-management-stored-procedure/src/main/java/com/codegym/repository/impl/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/customer-management-stored-procedure/src/main/java/com/codegym/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/customer-management-stored-procedure/src/main/java/com/codegym/service/impl/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/customer-management-stored-procedure/src/main/webapp/WEB-INF/views/customer/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss3_data_binding_and_form/practice/spring-upload-file" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss3_data_binding_and_form/practice/spring-upload-file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/build/classes/java/main/com/codegym/configuration/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/build/classes/java/main/com/codegym/configuration/AppInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/build/classes/java/main/com/codegym/controller/MusicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/build/classes/java/main/com/codegym/controller/MusicController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/build/classes/java/main/com/codegym/service/IMusic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/build/classes/java/main/com/codegym/service/impl/MusicService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/build/libs/musci-app-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/build/libs/musci-app-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/java/com/codegym/configuration/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/java/com/codegym/configuration/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/java/com/codegym/controller/MusicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/java/com/codegym/controller/MusicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/java/com/codegym/service/IMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/java/com/codegym/service/IMusicService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/java/com/codegym/service/impl/MusicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/java/com/codegym/service/impl/MusicServiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/webapp/WEB-INF/views/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/musci-app/src/main/webapp/WEB-INF/views/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/product-management-v2/src/main/java/com/codegym/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/product-management-v2/src/main/java/com/codegym/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/product-management-v2/src/main/java/com/codegym/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/exercise/product-management-v2/src/main/java/com/codegym/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/product-management-v2/src/main/java/com/codegym/service/IProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/exercise/product-management-v2/src/main/java/com/codegym/service/impl/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss5_orm/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5_orm/practice/customer-management" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exercise/blog" />
+  </component>
+  <component name="RunManager">
+    <configuration name="BlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="blog.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.codegym.blog.BlogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="adb3e18a-1c1e-4c4a-9ce8-3c301b027b87" name="Changes" comment="" />
+      <created>1661227962422</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661227962422</updated>
+      <workItem from="1661227964402" duration="176000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
