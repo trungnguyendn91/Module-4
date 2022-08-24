@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div id="detail">
+    <div class="cusdetail">
+        <label>ID sản phẩm:</label>
+        <label th:text="${productList.id}"></label>
+    </div>
+    <div class="cusdetail">
+        <label>Tên sản phẩm:</label>
+        <label th:text="${productList.productName}"></label>
+    </div>
+    <div class="cusdetail">
+        <label>Loại sản phẩm:</label>
+        <label th:text="${productList.type}"></label>
+    </div>
+    <div class="cusdetail">
+        <label>Nhãn hiệu:</label>
+        <label th:text="${productList.brand}"></label>
+    </div>
+    <div class="cusdetail">
+        <label>Xuất xứ:</label>
+        <label th:text="${productList.country}"></label>
+    </div><div class="cusdetail">
+    <label>Giá:</label>
+    <label th:text="${productList.cost}"></label>
+</div>
+</div>
+</body>
+</html>

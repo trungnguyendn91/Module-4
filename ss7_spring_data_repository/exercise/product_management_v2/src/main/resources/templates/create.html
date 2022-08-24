@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h3>Chi tiết sản phẩm</h3>
+<p>
+    <a th:href="@{/products}">
+        Quay lại danh sách sản phẩm
+    </a>
+</p>
+<div class="container">
+    <h1>Thêm sản phẩm</h1>
+    <form action="/create" method="post" th:object="${productList}">
+
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Tên sản phẩm</label>
+            <input type="text" th:field="*{productName}"/>
+        </div>
+        <div>
+            <label>Loại sản phẩm</label>
+            <input type="email" th:field="*{type}"/>
+        </div>
+        <div>
+            <label>Nhãn hiệu</label>
+            <input type="text" th:field="*{brand}"/>
+        </div>
+        <div>
+            <label>Xuất xứ</label>
+            <input type="text" th:field="*{country}"/>
+        </div>
+        <div>
+            <label>Giá</label>
+            <input type="text" th:field="*{cost}"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button onclick="location.href='/home'" class="btn btn-primary" type="button">Back to home</button>
+    </form>
+</div>
+
+</body>
+</html>
