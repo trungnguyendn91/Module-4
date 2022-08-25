@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List bài hát</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Danh sách bài hát</h1>
+<a href="/create">Thêm mới</a>
+<table class="table table-striped">
+    <tr>
+        <th>Stt</th>
+        <th>Tên bài hát</th>
+        <th>Ca sĩ trình bày</th>
+        <th>Thể loại</th>
+        <th>Chỉnh sửa</th>
+    </tr>
+    <tr th:each="music,loop : ${listMusic}">
+        <td th:text="${loop.count}"></td>
+        <td th:text="${music.musicName}"></td>
+        <td th:text="${music.singleName}"></td>
+        <td th:text="${music.type}"></td>
+        <td>
+            <a th:href="@{/update(id=${music.id})}">Chỉnh sửa</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

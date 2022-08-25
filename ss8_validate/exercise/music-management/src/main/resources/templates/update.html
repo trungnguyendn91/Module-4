@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Edit</h1>
+
+<form action="/editMusic" method="post" th:object="${listMusic}">
+    <input type="hidden" th:field="*{id}">
+    <div class="container">
+        <div>
+            <label>Tên bài hát</label>
+            <input class="form-control" type="text" th:field="*{musicName}">
+        </div>
+        <div th:errors="*{musicName}"></div>
+        <div>
+            <label>Ca sĩ trình bày</label>
+            <input class="form-control" type="text" th:field="*{singleName}">
+        </div>
+        <div th:errors="*{singleName}"></div>
+        <div>
+            <label>Thể loại</label>
+            <input class="form-control" type="text" th:field="*{type}">
+        </div>
+        <div th:errors="*{type}"></div>
+        <div class="m-2">
+            <button class="btn btn-success" type="submit">Lưu</button>
+            <button class="btn btn-secondary" href="/">Quay lại</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

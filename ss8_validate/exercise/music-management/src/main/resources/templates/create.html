@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New</title>
+</head>
+<body>
+<div>
+  <h1>Thêm mới bài hát</h1>
+</div>
+<a href="/">Quay lại danh sách</a>
+<form action="/createMusic" method="post" th:object="${music}">
+  <div class="container">
+    <div>
+      <label>Tên bài hát</label>
+      <input class="form-control" type="text" th:field="*{musicName}">
+    </div>
+    <div th:errors="*{musicName}"></div>
+    <div>
+      <label>Ca sĩ trình bày</label>
+      <input class="form-control" type="text" th:field="*{singleName}">
+    </div>
+    <div th:errors="*{singleName}"></div>
+    <div>
+      <label>Thể loại</label>
+      <input class="form-control" type="text" th:field="*{type}">
+    </div>
+    <div th:errors="*{type}"></div>
+    <div class="m-2">
+      <button class="btn btn-success" type="submit">Lưu</button>
+      <button class="btn btn-success" type="reset">Hủy</button>
+    </div>
+  </div>
+</form>
+</body>
+</html>
