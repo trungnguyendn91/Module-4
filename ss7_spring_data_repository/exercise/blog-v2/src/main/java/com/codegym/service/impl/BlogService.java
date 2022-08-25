@@ -36,15 +36,15 @@ public class BlogService implements IBlogService {
         return blogRepository.findById(id).orElse(null);
     }
 
-//    @Override
-//    public Page<Blog> findAllByTitleContaining(String title, Pageable pageable) {
-//        return blogRepository.findAllByBlogTitleContaining(title, pageable);
-//    }
-//
-//    @Override
-//    public Page<Blog> findAllByTitleContainingAndCategory_Id(String blogTitle, Integer id, Pageable pageable) {
-//        return blogRepository.findAllByTitleContainingAndCategory_Id(blogTitle, id, pageable);
-//    }
+   @Override
+    public Page<Blog> findAllByTitleContaining(String title, Pageable pageable) {
+        return blogRepository.findAllByBlogTitleContaining(title, pageable);
+    }
+
+    @Override
+   public Page<Blog> findAllByBlogTitleContainingAndCategory_Id(String blogTitle, Integer id, Pageable pageable) {
+        return blogRepository.findAllByBlogTitleContainingAndCategory_Id(blogTitle, id, pageable);
+    }
 
 
 }

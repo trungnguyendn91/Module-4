@@ -1,10 +1,10 @@
-package com.codegym.repository;
+package com.example.repository;
 
-import com.codegym.model.Product;
+import com.example.model.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IProductRepository extends JpaRepository<Product, Integer> {
-    Page<Product> findAllByNameContaining(String name, Pageable pageable);
+    Page<Product> findAllByProductNameContaining(String name, Pageable pageable);
 }

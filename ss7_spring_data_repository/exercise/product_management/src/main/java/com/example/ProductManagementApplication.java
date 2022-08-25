@@ -1,13 +1,13 @@
-package com.codegym;
+package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductManagementV2Application {
+public class ProductManagementApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProductManagementV2Application.class, args);
+        SpringApplication.run(ProductManagementApplication.class, args);
     }
 
 }

@@ -19,6 +19,10 @@ public class Blog {
     public Blog() {
     }
 
+    public Blog(Category category) {
+        this.category = category;
+    }
+
     public Blog(Integer id, String blogTitle, String blogContent, Category category) {
         this.id = id;
         this.blogTitle = blogTitle;

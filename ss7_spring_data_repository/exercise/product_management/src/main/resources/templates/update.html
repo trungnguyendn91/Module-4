@@ -6,24 +6,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-<h3>Chi tiết sản phẩm</h3>
+<h1>Update LIST</h1>
 <p>
-    <a th:href="@{/products}">
+    <a th:href="@{/}">
         Quay lại danh sách sản phẩm
     </a>
 </p>
-<div class="container">
-    <h1>Thêm sản phẩm</h1>
-    <form action="/create" method="post" th:object="${productList}">
-
-        <input type="hidden" th:field="*{id}"/>
+<div id="form">
+    <form th:action="@{/update}" th:object="${productList}"
+          method="POST" novalidate="novalidate">
+        <input type="text" readonly th:field="*{id}"/>
         <div>
             <label>Tên sản phẩm</label>
             <input type="text" th:field="*{productName}"/>
         </div>
         <div>
             <label>Loại sản phẩm</label>
-            <input type="email" th:field="*{type}"/>
+            <input type="text" th:field="*{type}"/>
         </div>
         <div>
             <label>Nhãn hiệu</label>
@@ -37,9 +36,7 @@
             <label>Giá</label>
             <input type="text" th:field="*{cost}"/>
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button onclick="location.href='/home'" class="btn btn-primary" type="button">Back to home</button>
+        <input type="submit" value="update"/>
     </form>
 </div>
 

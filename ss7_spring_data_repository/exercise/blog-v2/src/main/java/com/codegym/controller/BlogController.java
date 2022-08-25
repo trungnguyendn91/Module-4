@@ -23,16 +23,16 @@ public class BlogController {
     @Autowired
     private ICategoryService categoryService;
 
-    @GetMapping ("/")
-    public String list(Model model, @PageableDefault(size =2,
-                        sort = "id", direction = Sort.Direction.DESC)Pageable pageable,
-                       @RequestParam Optional<String> keyword ){
-        String keyWordVal = keyword.orElse("");
-        model.addAttribute("blogList",
-                this.blogService.findAll(keyWordVal, pageable));
-        model.addAttribute("keyWord", keyWordVal);
-                return "blog_list";
-    }
+//    @GetMapping ("/")
+//    public String list(Model model, @PageableDefault(size =2,
+//                        sort = "id", direction = Sort.Direction.DESC)Pageable pageable,
+//                       @RequestParam Optional<String> keyword ){
+//        String keyWordVal = keyword.orElse("");
+//        model.addAttribute("blogList",
+//                this.blogService.findAll(keyWordVal, pageable));
+//        model.addAttribute("keyWord", keyWordVal);
+//                return "blog_list";
+//    }
     @GetMapping ("/create")
     public String create(Model model){
         model.addAttribute("blogList", new Blog());
@@ -70,20 +70,22 @@ public class BlogController {
         return "/detail";
     }
 
-//    @GetMapping(value = {"", "/", "/search"})
-//    public String goList(Model model, @PageableDefault(value = 2, sort = "id", direction = Sort.Direction.DESC) Pageable pageable,
-//                         @RequestParam Optional<String> key, @ModelAttribute("blog") Blog blog) {
-//        String keyVal = key.orElse("");
-//        if (blog.getCategory()!=null) {
-//            model.addAttribute("blogList", blogService.findAllByTitleContainingAndCategory_Id(keyVal, blog.getCategory().getId(), pageable));
-//
-//        } else {
-//            model.addAttribute("blogList", blogService.findAllByTitleContaining(keyVal, pageable));
-//        }
-//        model.addAttribute("categoryList", categoryService.findAll());
-//        model.addAttribute("keyWord", keyVal);
-//        model.addAttribute("blog", blog);
-//        return "blog_list";
-//    }
+    @GetMapping(value = {"", "/", "/search"})
+    public String goList(Model model, @PageableDefault(value = 2, sort = "id", direction = Sort.Direction.DESC)
+                            Pageable pageable,
+                         @RequestParam Optional<String> key, @ModelAttribute("blog") Blog blog) {
+        String keyVal = key.orElse("");
+        if (blog.getCategory()!=null) {
+            model.addAttribute("blogList", blogService.findAllByBlogTitleContainingAndCategory_Id(keyVal,
+                    blog.getCategory().getId(), pageable));
+
+        } else {
+            model.addAttribute("blogList", blogService.findAllByTitleContaining(keyVal, pageable));
+        }
+        model.addAttribute("categoryList", categoryService.findAll());
+        model.addAttribute("keyWord", keyVal);
+        model.addAttribute("blog", blog);
+        return "blog_list";
+    }
 
 }

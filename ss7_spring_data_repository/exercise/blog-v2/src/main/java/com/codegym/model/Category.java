@@ -31,6 +31,10 @@ public class Category {
         return category;
     }
 
+    public Category(Integer id) {
+        this.id = id;
+    }
+
     public void setCategory(String category) {
         this.category = category;
     }

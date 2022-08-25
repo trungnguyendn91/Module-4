@@ -16,12 +16,12 @@
 
     <input class="form-control me-2" type="text"  name="key" th:value="${keyWord}" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success" type="submit">Search</button>
-<!--    <div th:object="${blogList}">-->
-<!--        <select name="" id="" th:field="*{ca}">-->
-<!--            <option value="">Select</option>-->
-<!--            <option th:each="category: ${categoryList}" th:value="${category.id}" th:text="${category.category}"></option>-->
-<!--        </select>-->
-<!--    </div>-->
+    <div th:object="${blog}">
+        <select name="key" th:value="${keyWord}" id="" th:field="*{category}">
+            <option value="">Select</option>
+            <option th:each="category: ${categoryList}" th:value="${category.id}" th:text="${category.category}"></option>
+        </select>
+    </div>
 </form>
 
 <table class="table table-striped">
@@ -56,7 +56,7 @@
     <div class="row">
         <div class="col-lg-12">
             <a th:href="@{'/'(page=${blogList.number - 1 },
-                keyword = ${keyWord})}"
+                key = ${keyWord})}"
                 th:if="${blogList.hasPrevious()}">
                 Previous
             </a>
@@ -64,7 +64,7 @@
             /
             <span th:text="${blogList.totalPages}"></span>
             <a th:href="@{'/'(page=${blogList.number + 1 },
-                keyword = ${keyWord})}"
+                key = ${keyWord})}"
                th:if="${blogList.hasNext()}">
                 Next
             </a>
