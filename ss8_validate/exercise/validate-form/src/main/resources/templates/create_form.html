@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form đăng ký</title>
+</head>
+<body>
+<h1>Form Đăng Ký</h1>
+<form action="/create" method="post" th:object="${form}">
+    <div class="form-outline mb-4">
+        <label class="form-label">Họ</label><br>
+        <input type="text" th:field="*{firstName}" class="form-control" />
+        <p th:errors="*{firstName}">Name Error</p>
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label">Tên</label><br>
+        <input type="text" th:field="*{lastName}" class="form-control" />
+        <p th:errors="*{lastName}">Name Error</p>
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label">Ngày sinh</label><br>
+<!--        <input type="date" th:field="*{dayOfBirth}" class="form-control" />-->
+        <input type="date" th:value="*{dayOfBirth}" th:field="*{dayOfBirth}" />
+        <p th:errors="*{dayOfBirth}"></p>
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label">Email</label><br>
+        <input type="email" th:field="*{email}" class="form-control" />
+        <p th:errors="*{email}"></p>
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label">CMND/CCCD</label><br>
+        <input type="text" th:field="*{idCard}" class="form-control" />
+        <p th:errors="*{idCard}">Name Error</p>
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label">Số điện thoại</label><br>
+        <input type="text" th:field="*{phoneNumber}" class="form-control" />
+        <p th:errors="*{phoneNumber}">Name Error</p>
+    </div>
+    <button id="btnCreate" type="submit" class="btn btn-primary btn-block">
+        Create
+    </button>
+</form>
+</body>
+</html>
