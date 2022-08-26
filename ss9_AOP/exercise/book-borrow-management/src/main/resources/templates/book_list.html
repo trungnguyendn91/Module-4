@@ -7,7 +7,7 @@
 </head>
 <body style="text-align: center">
 <h3 style="text-align: center">List Sách</h3>
-<p th:text="${mess}"></p>
+<p style="color: cornflowerblue" th:text="${mess}"></p>
 <table class="table table-striped">
     <thead>
     <tr>
@@ -46,10 +46,10 @@
                 </div>
                 <div class="modal-body">
                     <input type="text" hidden name="id" id="idBook">
-                    <span>Bán có muốn trả sách không? <span class="text-danger" id="nameBook"></span></span>
+                    <span>Bạn có muốn trả cuốn <span class="text-danger" id="nameBook"></span> không?</span>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                     <input type="submit" class="btn btn-primary" value="Trả sách">
                 </div>
             </div>
