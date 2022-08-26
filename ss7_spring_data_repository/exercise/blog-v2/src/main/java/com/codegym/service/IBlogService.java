@@ -10,6 +10,7 @@ public interface IBlogService {
     Page<Blog> findAll(String blogTitle, Pageable pageable);
 
     void save(Blog blog);
+
     void deleteById(Integer id);
 
     Blog findById(Integer id);

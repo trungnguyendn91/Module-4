@@ -42,11 +42,11 @@
         <td th:text="${blog.getCategory().category}"></td>
         <td><a th:href="@{/{id}/edit(id=${blog.getId()})}">edit</a></td>
         <td>
-            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                      onclick="objDelete(this.value)" th:value="${blog.id}+','+${blog.blogTitle}">
-                Delete
-            </button>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                          onclick="objDelete(this.value)" th:value="${blog.id}+','+${blog.blogTitle}">
+                    Delete
+                </button>
         </td>
         <td><a th:href="@{/{id}/view(id=${blog.getId()})}">view</a></td>
     </tr>
