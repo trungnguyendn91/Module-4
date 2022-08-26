@@ -7,12 +7,11 @@
 </head>
 <body style="text-align: center">
 <h3 style="text-align: center">List Sách</h3>
-<p style="color: red" th:text="${messages}"></p>
+<p th:text="${mess}"></p>
 <table class="table table-striped">
     <thead>
     <tr>
         <th>STT</th>
-        <th>id</th>
         <th>Tên</th>
         <th>Số lượng hiện tại</th>
         <th>Số lượng đã mượn</th>
@@ -23,7 +22,6 @@
     <tbody>
     <tr th:each="book,row : ${bookList}">
         <td th:text="${row.count}"></td>
-        <td th:text="${book.id}"></td>
         <td th:text="${book.bookName}"></td>
         <td th:text="${book.quantityBook}"></td>
         <td th:text="${book.quantityBorrow}"></td>

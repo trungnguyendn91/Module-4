@@ -5,6 +5,8 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
+
 @Aspect
 @Component
 public class BookAspect {
@@ -12,7 +14,10 @@ public class BookAspect {
     @AfterReturning(pointcut = "execution(* com.codegym.controller.BookController.*(..))")
     public static void processing(JoinPoint joinPoint){
         String methodName = joinPoint.getSignature().getName();
-        int c = count++;
-        System.err.println("Method " + methodName + " Đã chạy xong" + " Số lần " + c );
+        String args = Arrays.toString(joinPoint.getArgs());
+        System.err.println("method " + methodName + " đã chạy xong!");
+        System.err.println(args);
+        count++;
+        System.err.println("thống kê sử dụng: " + count +" lần!");
     }
 }

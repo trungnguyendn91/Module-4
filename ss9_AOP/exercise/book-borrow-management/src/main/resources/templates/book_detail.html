@@ -14,23 +14,23 @@
 <div id="detail">
     <div class="cusdetail">
         <label>ID:</label>
-        <p th:text="${bookList.id}"></p>
+        <span th:text="${bookList.id}"></span>
     </div>
     <div>
         <label>Tên sách:</label>
-        <p th:text="*{bookList.bookName}"></p>
+        <span th:text="*{bookList.bookName}"></span>
     </div>
     <div>
-        <label>Giới thiệu</label>
+        <label>Giới thiệu:</label>
         <p th:text="*{bookList.bookTittle}" style="text-align: center" width="200px"></p>
     </div>
     <div>
         <label>Số lượng hiện tại:</label>
-        <p th:text="*{bookList.quantityBook}" ></p>
+        <span th:text="*{bookList.quantityBook}" ></span>
     </div>
     <div>
         <label>Số lượng đã mượn:</label>
-        <p th:text="*{bookList.quantityBorrow}" ></p>
+        <span th:text="*{bookList.quantityBorrow}" ></span>
     </div>
     <div>
         <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
