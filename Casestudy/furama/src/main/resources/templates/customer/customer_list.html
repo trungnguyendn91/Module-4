@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: powderblue">
+<div  th:replace="/layout :: nav"></div>
+<H3 style="text-align: center">Danh Sách Khách Hàng</H3>
+<div class>
+    <div class="row">
+        <div class="col-lg-4 ">
+            <div class="d-flex">
+                <a href="/customers?action=create">
+                    <button>Thêm mới</button>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 ">
+
+        </div>
+        <div class="col-lg-4 ">
+            <div class="container-fluid">
+                <form action="/customers?action=search" method="post">
+                    <input required type="text" name="search">
+                    <button type="submit">Tìm bằng tên</button>
+                </form>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="" class="container-fluid">
+    <button type="submit">Sắp xếp</button>
+</a>
+<div align="center">
+    <table class="table table-success table-striped">
+        <tr style="text-align: center">
+            <th>Id Customer</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Id number</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr style="text-align: center">
+                <td>Member</td>
+                <td>Văn Thanh</td>
+                <td>22/11/1996</td>
+                <td>Nam</td>
+                <td>8983948345</td>
+                <td>0906999888</td>
+                <td>thanhvan@gmail.com</td>
+                <td>Đà Nẵng</td>
+                <td class="text-center">
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#editModal">Edit</button>
+                </td>
+                <td class="text-center">
+                    <button onclick="showInfoDelete('${customer.customerId}','${customer.customerName}')" type="button"
+                            class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </c:forEach>
+
+    </table>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form action="/customers?action=delete" method="post">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="deleteId" id="deleteId">
+                        <span>Bạn có muốn xóa khách hàng: </span><span id="deleteName"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function showInfoDelete(id, name) {
+            document.getElementById("deleteId").value = id;
+            document.getElementById("deleteName").innerText = name;
+
+        }
+    </script>
+</div>
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container w-100 mt-2 p-2" style="border: 1px solid grey; border-radius: 15px">
+                    <h3 align="center">SỬA THÔNG TIN KHÁC HÀNG</h3>
+                    <form action="" method="post">
+
+                        <div class="col-md-12">
+                            <label for="name" class="form-label">Tên nhân viên</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên"
+                                   required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="dateOfBirth" class="form-label">Ngày sinh</label>
+                            <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth"
+                                   placeholder="Ngày sinh" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="CMND" class="form-label">CMND</label>
+                            <input type="text" class="form-control" id="CMND" name="CMND" placeholder="CMND" required>
+                        </div>
+
+                        <div class="col-md-12 ">
+                            <label for="email" class="form-label">Email </label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="email"
+                                   required>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <label class="form-label">Trình độ</label>
+                            <select name="" class="form-select">
+                                <option value="None">Chọn trình độ</option>
+                                <option value="">Trung cấp</option>
+                                <option value="">Cao đẳng</option>
+                                <option value="">Đại học</option>
+                                <option value="">Sau đại học</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label">Vị Trí</label>
+                            <select name="" class="form-select">
+                                <option value="None">Chọn trình vị trí</option>
+                                <option >Lễ tân</option>
+                                <option >Phục vụ</option>
+                                <option >Chuyên viên</option>
+                                <option >Giám sát</option>
+                                <option >Quản lí</option>
+                                <option >Giám đốc</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">Bộ phận</label>
+                            <select name="" class="form-select">
+                                <option value="None">Chọn bộ phận</option>
+                                <option value="">Sale-marketing</option>
+                                <option value="">Hành chính</option>
+                                <option value="">Phục vụ</option>
+                                <option value="">Quản lí</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="salary" class="form-label">Lương </label>
+                            <input type="text" class="form-control" id="salary" name="salary" placeholder="lương"
+                                   required>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="/layout :: footer"></div>
+</body>
+</html>

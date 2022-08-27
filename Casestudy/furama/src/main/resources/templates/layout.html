@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #sticky {
+            position: fixed;
+            top:150px;
+            width: 1300px;
+            margin: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body >
+<div th:fragment="nav">
+<div class="row" style="margin: auto; background-color: #0dcaf0" >
+    <div class="col-lg-3 d-flex justify-content-center">
+        <img src="\img\logo.png"/>
+    </div>
+    <div class="col-lg-3">
+        <div class="catalog-widget-inside" style="visibility: visible;">
+            <a href="https://www.tripadvisor.com/Hotel_Review-g298085-d302750-Reviews-Furama_Resort_Danang-Da_Nang_Quang_Nam_Province.html" target="_blank">
+                <div class="widget-tripadvisor">
+                    <div class="inside">
+                        <div class="widget-tripadvisor-logo"><img src="https://smartdata.tonytemplates.com/bestel/wp-content/uploads/2018/05/widget-tripadvisor-logo.png" alt=""></div>
+                        <div class="widget-tripadvisor-rating"><img src="https://furamavietnam.com/wp-content/uploads/2018/08/widget-tripadvisor-rating.png" alt=""></div>
+                        <div class="widget-tripadvisor-text">2,746 Reviews</div>
+                    </div>
+                </div>
+            </a>
+            <span class="catalog-widget-toggle"></span> </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="header-contact d-flex">
+            <div class="header-contact-icon">
+                <i class="icon-placeholder"></i></div>
+            <div class="header-contact-txt">
+                <p>103 – 105 Đường Võ Nguyên Giáp, Phường Khuê Mỹ, Quận Ngũ hành Sơn, Tp. Đà Nẵng, Việt Nam                                                                                        </p><p class="txt-sm">
+                <span>7.0 km</span> từ Sân bay Quốc tế Đà Nẵng</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="d-flex">
+            <div>
+                <p class="txt-lg">
+                    Phone number: 84-236-3847 333/888</p>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div >
+                <p>Email:</p>
+                <a href="mailto:reservation@furamavietnam.com">
+                    reservation@furamavietnam.com </a>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg container-fluid sticky-lg-top" style="background-color: #0a53be">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/}" style="color: #b6effb">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/employee}"  style="color: #b6effb">Employee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/customer}"  style="color: #b6effb">Customer</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#"  style="color: #b6effb" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Service
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" th:href="@{/showRom}">Type Room</a></li>
+                        <li><a class="dropdown-item" th:href="@{/service}">List Service</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"th:href="@{/contract}"  style="color: #b6effb">Contract</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</div>
+<footer class="text-center text-white mt-3" style="background-color: #0dcaf0;" th:fragment="footer">
+    <div class="container p-4">
+        <section class="">
+            <div class="row">
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div
+                            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                            data-ripple-color="light"
+                    >
+                        <img
+                                src="/img/pexels-photo-6129984.jpeg"
+                                class="w-100"
+                        />
+                        <a href="#!">
+                            <div
+                                    class="mask"
+                                    style="background-color: rgba(251, 251, 251, 0.2);"
+                            ></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div
+                            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                            data-ripple-color="light"
+                    >
+                        <img
+                                src="/img/Furama-Đà-Nẵng-Resort.jpg"
+                                class="w-100"
+                        />
+                        <a href="#!">
+                            <div
+                                    class="mask"
+                                    style="background-color: rgba(251, 251, 251, 0.2);"
+                            ></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div
+                            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                            data-ripple-color="light"
+                    >
+                        <img
+                                src="/img/furama-cleaned.jpg"
+                                class="w-100"
+                        />
+                        <a href="#!">
+                            <div
+                                    class="mask"
+                                    style="background-color: rgba(251, 251, 251, 0.2);"
+                            ></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div
+                            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                            data-ripple-color="light"
+                    >
+                        <img
+                                src="/img/pexels-photo-219998.jpeg"
+                                class="w-100"
+                        />
+                        <a href="#!">
+                            <div
+                                    class="mask"
+                                    style="background-color: rgba(251, 251, 251, 0.2);"
+                            ></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div
+                            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                            data-ripple-color="light"
+                    >
+                        <img
+                                src="/img/53114-furama-resort-da-nang-11.jpg"
+                                class="w-100"
+                        />
+                        <a href="#!">
+                            <div
+                                    class="mask"
+                                    style="background-color: rgba(251, 251, 251, 0.2);"
+                            ></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                    <div
+                            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                            data-ripple-color="light"
+                    >
+                        <img
+                                src="/img/62371531.jpg"
+                                class="w-100"
+                        />
+                        <a href="#!">
+                            <div
+                                    class="mask"
+                                    style="background-color: rgba(251, 251, 251, 0.2);"
+                            ></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © Furama vn
+        <a class="text-white" href="https://furamavietnam.com/vi/">Furamavietnam.com</a>
+    </div>
+</footer>
+</body>
+</html>
