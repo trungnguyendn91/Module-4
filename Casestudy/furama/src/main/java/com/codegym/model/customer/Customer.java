@@ -1,25 +1,54 @@
 package com.codegym.model.customer;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import java.time.LocalDate;
 
 @Entity
-@Table
+@Table (name = "khach_hang")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "ma_khach_hang")
     private int customerId;
-    private int customerTypeId;
+    @ManyToOne
+    @JoinColumn ( name = "ma_loai_khach_hang",  referencedColumnName = "ma_loai_khach_hang" )
+    private CustomerType customerType;
+    @Column (name = "ho_ten")
     private String customerName;
-    private String customerBirth;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column (name = "ngay_sinh")
+    private LocalDate customerBirth;
+    @Column (name = "gioi_tinh")
     private boolean customerGender;
+    @Column (name ="so_cmnd")
     private String customerIdCard;
+    @Column (name= "so_dien_thoai")
     private String customerPhone;
+    @Column (name = "email")
+    @Email
     private String customerEmail;
+    @Column (name= "dia_chi")
     private String customerAddress;
+
 
     public Customer() {
     }
 
+    public Customer(int customerId, CustomerType customerType, String customerName, LocalDate customerBirth, boolean customerGender,
+                    String customerIdCard, String customerPhone, String customerEmail, String customerAddress) {
+        this.customerId = customerId;
+        this.customerType = customerType;
+        this.customerName = customerName;
+        this.customerBirth = customerBirth;
+        this.customerGender = customerGender;
+        this.customerIdCard = customerIdCard;
+        this.customerPhone = customerPhone;
+        this.customerEmail = customerEmail;
+        this.customerAddress = customerAddress;
+    }
 
     public int getCustomerId() {
         return customerId;
@@ -29,12 +58,12 @@ public class Customer {
         this.customerId = customerId;
     }
 
-    public int getCustomerTypeId() {
-        return customerTypeId;
+    public CustomerType getCustomerType() {
+        return customerType;
     }
 
-    public void setCustomerTypeId(int customerTypeId) {
-        this.customerTypeId = customerTypeId;
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
     }
 
     public String getCustomerName() {
@@ -45,11 +74,11 @@ public class Customer {
         this.customerName = customerName;
     }
 
-    public String getCustomerBirth() {
+    public LocalDate getCustomerBirth() {
         return customerBirth;
     }
 
-    public void setCustomerBirth(String customerBirth) {
+    public void setCustomerBirth(LocalDate customerBirth) {
         this.customerBirth = customerBirth;
     }
 
@@ -90,31 +119,6 @@ public class Customer {
     }
 
     public void setCustomerAddress(String customerAddress) {
-        this.customerAddress = customerAddress;
-    }
-
-    public Customer(int customerId, int customerTypeId, String customerName, String customerBirth,
-                    boolean customerGender, String customerIdCard, String customerPhone, String customerEmail, String customerAddress) {
-        this.customerId = customerId;
-        this.customerTypeId = customerTypeId;
-        this.customerName = customerName;
-        this.customerBirth = customerBirth;
-        this.customerGender = customerGender;
-        this.customerIdCard = customerIdCard;
-        this.customerPhone = customerPhone;
-        this.customerEmail = customerEmail;
-        this.customerAddress = customerAddress;
-    }
-
-    public Customer(int customerTypeId, String customerName, String customerBirth, boolean customerGender,
-                    String customerIdCard, String customerPhone, String customerEmail, String customerAddress) {
-        this.customerTypeId = customerTypeId;
-        this.customerName = customerName;
-        this.customerBirth = customerBirth;
-        this.customerGender = customerGender;
-        this.customerIdCard = customerIdCard;
-        this.customerPhone = customerPhone;
-        this.customerEmail = customerEmail;
         this.customerAddress = customerAddress;
     }
 }

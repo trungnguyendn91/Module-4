@@ -74,7 +74,7 @@ public class BlogController {
     public String goList(Model model, @PageableDefault(value = 2, sort = "id", direction = Sort.Direction.DESC)
                             Pageable pageable,
                          @RequestParam Optional<String> key, @ModelAttribute("blog") Blog blog) {
-        String keyVal = key.orElse("");
+            String keyVal = key.orElse("");
         if (blog.getCategory()!=null) {
             model.addAttribute("blogList", blogService.findAllByBlogTitleContainingAndCategory_Id(keyVal,
                     blog.getCategory().getId(), pageable));

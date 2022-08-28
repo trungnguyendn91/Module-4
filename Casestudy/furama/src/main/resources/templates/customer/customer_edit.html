@@ -5,6 +5,64 @@
     <title>Title</title>
 </head>
 <body>
+<div class="container w-50 mt-4 p-2 mb-4" style="border: 1px solid grey; border-radius: 15px">
+    <h3 align="center" class="text-info">Add new Customer</h3>
+    <form class="row g-3" action="/customer/edit" method="post" th:object="${customer}">
+        <div class="col-md-12">
+            <label for="cId" class="form-label">Id</label>
+            <input type="text" readonly th:field="*{customerId}" class="form-control" id="cId">
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Loại khách </label>
+            <select name="customer_type_id"  class="form-select" required th:field="*{customerType}">
+                <option value="None" disabled selected>Chọn loại khách</option>
+                <option th:each="guestType : ${guestTypeList}"
+                        th:value="${guestType.getIdGuestType()}"
+                        th:text="${guestType.getGuestTypeName()}"> </option>
+            </select>
+        </div>
+        <div class="col-md-12">
+            <label for="name" class="form-label">Họ tên</label>
+            <input type="text" class="form-control" id="name" name="name" th:field="*{customerName}">
 
+        </div>
+        <div class="col-md-12">
+            <label for="birthday" class="form-label">Ngày sinh </label>
+            <input type="date" class="form-control" id="birthday" name="birthday" th:field="*{customerBirth}">
+
+        </div>
+        <div class="col-md-12">
+            <label  class="form-label me-4">Giới tính </label>
+            <select class="form-select" id="" th:field="*{customerGender}">
+                <option value="1">Nam</option>
+                <option value="2">Nữ</option>
+            </select>
+        </div>
+        <div class="col-md-12">
+            <label for="id_card" class="form-label">Số CMND/CCCD</label>
+            <input type="text" class="form-control" id="id_card"  name="id_card"  th:field="*{customerIdCard}" >
+
+        </div>
+        <div class="col-md-12">
+            <label for="phone" class="form-label">Số Điện Thoại</label>
+            <input type="text" class="form-control" id="phone" name="phone" th:field="*{customerPhone}" >
+
+        </div>
+        <div class="col-md-12 " id="s1" >
+            <label for="email" class="form-label">Email </label>
+            <input type="text" class="form-control" id="email" name="email" th:field="*{customerEmail}">
+
+        </div>
+
+        <div class="col-md-12 " id="s2" >
+            <label for="address" class="form-label">Địa chỉ </label>
+            <input type="text" class="form-control" id="address" name="address" th:field="*{customerAddress}">
+        </div>
+
+        <div class="col-12 ">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>
