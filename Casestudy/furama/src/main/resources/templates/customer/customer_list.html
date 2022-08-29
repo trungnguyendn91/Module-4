@@ -9,19 +9,19 @@
 <body style="background-color: powderblue">
 <div  th:replace="/layout :: nav"></div>
 <H3 style="text-align: center">Danh Sách Khách Hàng</H3>
-<div class>
+<div>
     <div class="row">
         <div class="col-lg-4 ">
             <div class="d-flex">
-                <a th:href="@{/customers/create}">
-                    <button>Thêm mới</button>
+                <a th:href="@{/customers/create}" class="btn btn-success">
+                    create
                 </a>
             </div>
         </div>
         <div class="col-lg-4 ">
 
         </div>
-        <form action="search" method="get" style="text-align: center">
+        <form action="/customers/search" method="get" style="text-align: center">
             <div>
                 <input class="form-control me-2" type="text"  name="key" th:value="${keyWord}" placeholder="Search tên khách hàng" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit" style="background: #ffca2c">Search</button>
@@ -75,26 +75,23 @@
 
     </table>
     <div>
-        <div class="row">
-            <div class="col-lg-12">
-                <a th:href="@{/customer(page=${customerList.number - 1 },
+        <div class="col-lg-12">
+            <a th:href="@{/customers(page=${customerList.number - 1 },
                 key = ${keyWord}, typeCustomer = ${guestTypeList})}"
-                   th:if="${customerList.hasPrevious()}">
-                    Previous
-                </a>
-                <span th:text="${customerList.number + 1}"></span>
-                /
-                <span th:text="${customerList.totalPages}"></span>
-                <a th:href="@{customer(page=${customerList.number + 1 },
+               th:if="${customerList.hasPrevious()}">
+                Previous
+            </a>
+            <span th:text="${customerList.number + 1}"></span>
+            /
+            <span th:text="${customerList.totalPages}"></span>
+            <a th:href="@{/customers(page=${customerList.number + 1 },
                 key = ${keyWord}, typeCustomer = ${guestTypeList})}"
-                   th:if="${customerList.hasNext()}">
-                    Next
-                </a>
-            </div>
-
+               th:if="${customerList.hasNext()}">
+                Next
+            </a>
         </div>
     </div>
-    <form th:action="@{/delete}" method="post">
+    <form th:action="@{/customers/delete}" method="post">
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

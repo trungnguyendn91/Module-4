@@ -14,8 +14,10 @@
             <label class="form-label">Loại khách </label>
             <select name="customer_type_id"  class="form-select" required th:field="*{customerType}">
                 <option value="None" disabled selected>Chọn loại khách</option>
-                <option th:each="guestType : ${guestTypeList}" th:value="${guestType.getIdGuestType()}"
-                        th:text="${guestType.getGuestTypeName()}"> </option>
+                <option th:each="guestType : ${guestTypeList}"
+                        th:value="${guestType.getIdGuestType()}"
+                        th:text="${guestType.getGuestTypeName()}">
+                </option>
             </select>
         </div>
 
@@ -32,8 +34,8 @@
         <div class="col-md-12">
             <label  class="form-label me-4">Giới tính </label>
             <select class="form-select" id="" th:field="*{customerGender}">
-                <option value="1">Nam</option>
-                <option value="2">Nữ</option>
+                <option value="true">Nam</option>
+                <option value="false">Nữ</option>
             </select>
         </div>
         <div class="col-md-12">
