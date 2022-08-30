@@ -5,6 +5,7 @@
     <title>Shop</title>
 </head>
 <body>
+<h1>Cửa Hàng</h1>
 <p>
     <a href="/shopping-cart">Giỏ hàng của bạn</a>
 </p>
@@ -19,7 +20,7 @@
         <tr>
             <td><img th:src="${product.picture}" style="width:80px" alt=""></td>
             <td th:text="${product.name}"></td>
-            <td th:text="${product.price}"></td>
+            <td th:text="${#numbers.formatCurrency(product.price)}"></td>
             <td><a th:href="@{/{id}/view(id=${product.getId()})}" >Chọn</a></td>
         </tr>
     </th:block>

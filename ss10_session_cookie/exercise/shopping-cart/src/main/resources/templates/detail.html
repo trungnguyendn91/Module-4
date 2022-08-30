@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <title>Chi tiết sản phẩm</title>
 </head>
-<body style="text-align: center">
+<body style="text-align: center ; width: 400px" >
 <h1>Chi tiết sản phẩm</h1>
 <div class="row">
     <div class="row text " >
         <div class="col-lg-12" style="border: #1a1e21">
             <div class="card">
-                <img th:src="${product.picture}" style="width: 100px" alt="">
+                <img th:src="${productList.picture}" style="width: 100px" alt="">
                 <p class="card-body">
-                    <h9 th:text="${product.name}"></h9>
+                    Tên sản phẩm: <span th:text="${productList.name}"></span>
                     <br>
-                    <h12 th:text="${product.price}"></h12>
+                    Giá: <span  th:text="${#numbers.formatCurrency(productList.price)}"></span>
                     <br>
-                    <h12 th:text="${product.description}"></h12>
+                    Thông tin sản phẩm: <br>
+                    <div th:text="${productList.description}"></div>
                     <br>
                     <br>
-                    <a th:href="@{/add(id=${product.id},expression='+')}">Thêm vào giỏ hàng</a>
+                    <a th:href="@{/add/__${productList.id}__(action='list')}" class="btn btn-primary">Thêm vào giỏ hàng</a>
                     <br>
                     <br>
                     <a th:href="@{/shop}">Quay lại cửa hàng</a>

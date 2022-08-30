@@ -17,7 +17,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Optional<Product> findById(Integer id) {
-        return productRepository.findById(id);
+    public Product findById(Integer id) {
+        return productRepository.findById(id).orElse(null);
     }
 }

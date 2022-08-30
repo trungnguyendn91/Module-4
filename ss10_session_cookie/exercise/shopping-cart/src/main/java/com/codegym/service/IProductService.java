@@ -8,5 +8,5 @@ public interface IProductService {
 
     Iterable<Product> findAll();
 
-    Optional <Product> findById(Integer id);
+    Product findById(Integer id);
 }

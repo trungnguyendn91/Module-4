@@ -8,12 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CartController {
-    public class ProductSessionController {
-        @GetMapping("/shopping-cart")
-        public ModelAndView listCart(@SessionAttribute("cart") Cart carts){
-            ModelAndView modelAndView = new ModelAndView("cart");
-            modelAndView.addObject("cart",carts);
-            return modelAndView;
-        }
+    @GetMapping("/shopping-cart")
+    public ModelAndView listCart(@SessionAttribute("cart") Cart carts) {
+        ModelAndView modelAndView = new ModelAndView("cart");
+        modelAndView.addObject("cart", carts);
+        return modelAndView;
     }
 }

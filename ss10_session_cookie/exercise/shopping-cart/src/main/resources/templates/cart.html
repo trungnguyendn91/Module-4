@@ -5,10 +5,11 @@
     <title>Giỏ hàng</title>
 </head>
 <body>
+<h1>Giỏ hàng của bạn</h1>
 <p>
     <a href="/shop">Shop</a>
 </p>
-<h1>Giỏ hàng của bạn</h1>
+
     <table class="table table-success table-striped" style="text-align: center">
         <tr>
             <th>Hình ảnh</th>
@@ -18,7 +19,7 @@
         </tr>
         <tr th:each="product: ${cart.getMap()}">
             <td>
-                <a th:href="@{/remove(id= ${product.getKey().id})}" th:text="${'X'}"></a>
+                <a th:href="@{/delete/__${product.getKey().getId()}__}" th:text="${'X'}"></a>
                 <img th:src="${product.getKey().picture}" style="width:80px" alt="">
             </td>
             <td>
@@ -33,16 +34,16 @@
                    th:href="@{/add/__${product.getKey().id}__(action='show')}"
                    th:text="${'+'}"></a>
             </td>
-            <td th:text="${product.getKey().price}"></td>
+            <td th:text="${#numbers.formatCurrency(product.getKey().price)}"></td>
         </tr>
         <tr>
             <td>Total</td>
             <td></td>
             <td></td>
-            <td th:text="${cart.countTotalPayment() + '$'}"></td>
+            <td th:text="${#numbers.formatCurrency(cart.countTotalPayment()) + 'vnd'}"></td>
         </tr>
         <tr class="list-group-item">
-            <button><a th:href="@{/pay}">Thanh toán</a></button>
+            <button><a th:href="@{/pay}">Thanh toán</a></button> <span th:text="${mess}" style="text-align: center"></span>
         </tr>
     </table>
 

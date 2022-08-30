@@ -32,36 +32,37 @@ public class ProductController {
     @GetMapping("/add/{id}")
     public String addToCart(@PathVariable("id") Integer id , @SessionAttribute Cart cart ,
                             @RequestParam("action") String action){
-        Optional<Product> product = productService.findById(id);
-        if(!product.isPresent()){
+        Product product = productService.findById(id);
+        if(product == null){
             return "error.404";
         }
         if(action.equals("show")){
-            cart.addProduct(product.get());
+            cart.addProduct(product);
             return "redirect:/shopping-cart";
         }
-        cart.addProduct(product.get());
+        cart.addProduct(product);
         return "cart";
     }
     @GetMapping("/{id}/view")
     public String view(@PathVariable Integer id, Model model) {
-        model.addAttribute("product", productService.findById(id));
+        model.addAttribute("productList", productService.findById(id));
         return "/detail";
     }
     @GetMapping("/delete/{id}")
     public String deleteFromCart(@PathVariable Integer id, @SessionAttribute Cart cart) {
-        Optional<Product> product = productService.findById(id);
+        Product product = productService.findById(id);
         if (product == null) {
             return "error.404";
         } else {
-            cart.deleteProduct(product.get());
+            cart.deleteProduct(product);
             return "cart";
         }
     }
 
     @GetMapping("/pay")
-    public String payCart( @SessionAttribute Cart cart) {
+    public String payCart( @SessionAttribute Cart cart, Model model) {
         cart.getMap().clear();
-        return "redirect:/shop";
+        model.addAttribute("mess","Thanh toán thành công");
+        return "cart";
     }
 }
