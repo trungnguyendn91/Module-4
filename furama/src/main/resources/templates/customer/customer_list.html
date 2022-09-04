@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: powderblue">
+<div  th:replace="/layout :: nav"></div>
+<H3 style="text-align: center">Danh Sách Khách Hàng</H3>
+<div>
+    <div class="row">
+        <div class="col-lg-4 ">
+            <button class="btn btn-outline-primary"
+            data-bs-toggle="modal" data-bs-target="#addModal">Thêm mới Nhân viên</button>
+        </div>
+        <div class="col-lg-4 ">
+
+        </div>
+        <form action="/customers/search" method="get" style="text-align: center">
+            <div>
+                <input class="form-control me-2" type="text"  name="key" th:value="${keyWord}" placeholder="Search tên khách hàng" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" style="background: #ffca2c">Search</button>
+            </div>
+            <div th:object="${customer}">
+                <label>Loại khách hàng</label>
+                <select name="key" th:value="${keyWord}" id="" th:field="*{customerType}">
+                    <option value="">Select</option>
+                    <option th:each="customerType: ${guestTypeList}" th:value="${customerType.idGuestType}" th:text="${customerType.guestTypeName}"></option>
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <table class="table table-success table-striped" >
+        <tr style="text-align: center">
+            <th>STT</th>
+            <th>Tên khách hàng</th>
+            <th>Loại khách hàng</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>CMND/CCCD</th>
+            <th>Điện thoại</th>
+            <th>Email</th>
+            <th>Địa chỉ</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+       <tr th:each="customer, status : ${customerList}"  style="text-align: center">
+           <td th:text="${status.count}"></td>
+           <td th:text="${customer.customerName}"></td>
+           <td th:text="${customer.getCustomerType().guestTypeName}"></td>
+           <td th:text="${customer.customerBirth}"></td>
+           <td th:if="${customer.customerGender}">nam</td>
+           <td th:unless="${customer.customerGender}">nữ</td>
+           <td th:text="${customer.customerIdCard}"></td>
+           <td th:text="${customer.customerPhone}"></td>
+           <td th:text="${customer.customerEmail}"></td>
+           <td th:text="${customer.customerAddress}"></td>
+           <td><a th:href="@{/customers/formEdit(id=${customer.customerId})}">edit</a></td>
+           <td class="text-center">
+               <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                       data-bs-target="#deleteModal"
+                       onclick="objDelete(this.value)" th:value="${customer.customerId}+','+${customer.customerName}">
+                   Delete
+               </button>
+           </td>
+       </tr>
+    </table>
+    <div>
+        <div class="col-lg-12">
+            <a th:href="@{/customers(page=${customerList.number - 1 },
+                key = ${keyWord}, typeCustomer = ${guestTypeList})}"
+               th:if="${customerList.hasPrevious()}">
+                Previous
+            </a>
+            <span th:text="${customerList.number + 1}"></span>
+            /
+            <span th:text="${customerList.totalPages}"></span>
+            <a th:href="@{/customers(page=${customerList.number + 1 },
+                key = ${keyWord}, typeCustomer = ${guestTypeList})}"
+               th:if="${customerList.hasNext()}">
+                Next
+            </a>
+        </div>
+    </div>
+    <form th:action="@{/customers/delete}" method="post">
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" hidden name="id" id="idDelete">
+                        <span>do you want to delete? <span class="text-danger" id="nameDelete"></span></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Delete">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        function objDelete(name) {
+            let arr = name.split(",");
+            document.getElementById("nameDelete").innerText = arr[1];
+            document.getElementById("idDelete").value = arr[0];
+        }
+    </script>
+</div>
+<div th:replace="/layout :: footer"></div>
+</body>
+</html>

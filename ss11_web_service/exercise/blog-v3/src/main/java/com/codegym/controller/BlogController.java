@@ -61,10 +61,13 @@ public class BlogController {
     }
 
     @GetMapping(value = {"", "/", "/search"})
-    public String goList(Model model, @PageableDefault(value = 2, sort = "id", direction = Sort.Direction.DESC)
-            Pageable pageable,
-                         @RequestParam Optional<String> key, @ModelAttribute("blog") Blog blog) {
+    public String goList(Model model,
+                         @PageableDefault(value = 2, sort = "id", direction = Sort.Direction.DESC) Pageable pageable,
+                         @RequestParam Optional<String> key,
+                         @RequestParam Optional<String> keyCategory,
+                         @ModelAttribute("blog") Blog blog) {
         String keyVal = key.orElse("");
+        String keyCat = keyCategory.orElse("");
         if (blog.getCategory()!=null) {
             model.addAttribute("blogList", blogService.findAllByBlogTitleContainingAndCategory_Id(keyVal,
                     blog.getCategory().getId(), pageable));
@@ -74,6 +77,7 @@ public class BlogController {
         }
         model.addAttribute("categoryList", categoryService.findAll());
         model.addAttribute("keyWord", keyVal);
+        model.addAttribute("keyCat", keyCat);
         model.addAttribute("blog", blog);
         return "blog_list";
     }

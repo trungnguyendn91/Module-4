@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: powderblue">
+<div th:replace="/layout :: nav"></div>
+<H3 style="text-align: center">Danh Sách Các Dịch Vụ</H3>
+<div class>
+    <div class="row">
+        <div class="col-lg-4 ">
+            <div class="d-flex">
+                <a href="/facility/addService" style="color: red">
+                    <button>Thêm mới</button>
+                </a>
+
+            </div>
+        </div>
+        <div class="col-lg-4 ">
+
+        </div>
+        <div class="col-lg-4 ">
+            <div class="container-fluid">
+                <form action="/facility?action=search" method="post">
+                    <input required type="text" name="search">
+                    <button type="submit">Tìm bằng tên</button>
+                </form>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="" class="container-fluid">
+    <button type="submit">Sắp xếp</button>
+</a>
+
+<div>
+    <table class="table table-success table-striped" id="tableCustomer">
+        <thead>
+        <tr style="text-align: center;">
+            <th>STT</th>
+            <th>Tên dịch vụ</th>
+            <th>Diện Tích(m <sup>2</sup>)</th>
+            <th>Giá Thuê</th>
+            <th>Số Người</th>
+            <th>Kiểu Thuê</th>
+            <th>Loại Dịch Vụ</th>
+            <th>Tiêu Chuẩn Phòng</th>
+            ;
+            <th>Tiện Nghi</th>
+            <th>Diện Tích Hồ Bơi</th>
+            <th>Số Tầng</th>
+            <th>Dịch vụ đi kèm</th>
+            <th>Edit</th>
+            <th>xóa</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="facility, loop:${facilityList}">
+            <td th:text="${loop.count}"></td>
+            <td th:text="${facility.facilityName}"></td>
+            <td th:text="${facility.facilityArea}"></td>
+            <td th:text="${facility.facilityCost}"></td>
+            <td th:text="${facility.facilityMaxPeople}"></td>
+            <td th:text="${facility.rentalType.rentTypeName}"></td>
+            <td th:text="${facility.serviceType.serviceTypeName}"></td>
+            <td th:text="${facility.standardRoom}"></td>
+            <td th:text="${facility.description}"></td>
+            <td th:text="${facility.poolArea}"></td>
+            <td th:text="${facility.numberOfFloor}"></td>
+            <td th:text="${facility.freeSerVice}"></td>
+
+            <td>
+                <a type="button" class="btn btn-primary"
+                   th:href="@{/facility/editService(id=${facility.facilityId})}">
+                    Sửa
+                </a>
+            <td class="text-center">
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                        data-bs-target="#deleteModal"
+                        onclick="objDelete(this.value)" th:value="${facility.facilityId}+','+${facility.facilityName}">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </table>
+    <form th:action="@{/facility/delete}" method="post">
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" hidden name="id" id="idDelete">
+                        <span>do you want to delete? <span class="text-danger" id="nameDelete"></span></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Delete">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        function objDelete(name) {
+            let arr = name.split(",");
+            document.getElementById("nameDelete").innerText = arr[1];
+            document.getElementById("idDelete").value = arr[0];
+        }
+    </script>
+</div>
+<div th:replace="/layout :: footer"></div>
+</body>
+</html>

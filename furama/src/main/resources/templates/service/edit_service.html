@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: powderblue">
+<div th:replace="/layout :: nav"></div>
+<div class="container w-50 mt-2 p-2" style="border: 1px solid grey; border-radius: 15px">
+    <h3 class="text-center">CHỈNH SỬA THÔNG TIN DỊCH VỤ</h3>
+    <form class="row g-3" action="/facility/edit" method="post" th:object="${facility}">
+        <div class="col-md-12">
+            <label class="form-label">Loại dịch vụ</label>
+            <select name="serviceType" class="form-select" onchange="showServiceInput(this)" id="serviceSelect"
+                    th:field="*{serviceType}">
+                <option th:each="service : ${serviceTypeList}" th:text="${service.serviceTypeName}"
+                        th:value="${service.serviceTypeId}"></option>
+            </select>
+        </div>
+        <input  hidden type="text" th:field="*{facilityId}">
+        <div class="col-md-12">
+            <label for="name" class="form-label">Tên dịch vụ</label>
+            <input type="text" class="form-control" id="name" name="name"  th:field="*{facilityName}" >
+        </div>
+        <div class="col-md-12">
+            <label for="area" class="form-label">Diện tích sử dụng</label>
+            <input type="text" class="form-control" id="area" name="area" th:field="*{facilityArea}" >
+
+        </div>
+        <div class="col-md-12">
+            <label for="cost" class="form-label">Giá thuê</label>
+            <input type="text" class="form-control" id="cost" name="cost" th:field="*{facilityCost}" >
+
+        </div>
+        <div class="col-md-12">
+            <label for="max_people" class="form-label">Số lượng người tối đa </label>
+            <input type="text" class="form-control" id="max_people" name="max_people" th:field="*{facilityMaxPeople}"
+                   required>
+
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Kiểu thuê</label>
+            <select name="rentalType" class="form-select" th:field="*{rentalType}" >
+                <option th:each="rental:${rentalTypeList}" th:text="${rental.rentTypeName}" th:value="${rental.rentTypeId}"></option>
+
+            </select>
+        </div>
+        <div class="col-md-12 " id="s1" style="display: none">
+            <label for="standard_room" class="form-label">Tiêu chuẩn phòng </label>
+            <input type="text" class="form-control" id="standard_room" name="standard_room"
+                   th:field="*{standardRoom}">
+        </div>
+
+        <div class="col-md-12 " id="s2" style="display: none">
+            <label for="description_other_convenience" class="form-label">Mô tả tiện nghi khác</label>
+            <input type="text" class="form-control" id="description_other_convenience"
+                   name="description_other_convenience" th:field="*{description}">
+        </div>
+
+        <div class="col-md-12 " id="s3" style="display: none">
+            <label for="pool_area" class="form-label">Diện tích hồ bơi </label>
+            <input type="text" class="form-control" id="pool_area" name="pool_area" th:field="*{poolArea}">
+
+        </div>
+
+        <div class="col-md-12" id="s4" style="display: none">
+            <label for="number_of_floors" class="form-label">Số tầng </label>
+            <input type="text" class="form-control" id="number_of_floors" name="number_of_floors"
+                   th:field="*{numberOfFloor}">
+
+        </div>
+
+        <div class="col-md-12 " id="s5" style="display: none">
+            <label for="facility_free" class="form-label">Dịch vụ miễn phí đi kèm </label>
+            <input type="text" class="form-control" id="facility_free" name="facility_free"
+                   th:field="*{freeSerVice}">
+        </div>
+
+        <div class="col-12 ">
+            <button type="submit" class="btn btn-primary">Gửi</button>
+        </div>
+    </form>
+</div>
+
+
+<script>
+    function showServiceInput(value) {
+        var v = value.value;
+        switch (v) {
+            case 'None':
+                document.getElementById("s1").style.display = "none";
+                document.getElementById("s2").style.display = "none";
+                document.getElementById("s3").style.display = "none";
+                document.getElementById("s4").style.display = "none";
+                document.getElementById("s5").style.display = "none";
+                break;
+            case "1":
+                document.getElementById("s1").style.display = "block";
+                document.getElementById("s2").style.display = "block";
+                document.getElementById("s3").style.display = "block";
+                document.getElementById("s4").style.display = "block";
+                document.getElementById("s5").style.display = "none";
+                break;
+            case "2":
+                document.getElementById("s1").style.display = "block";
+                document.getElementById("s2").style.display = "block";
+                document.getElementById("s4").style.display = "block";
+                document.getElementById("s5").style.display = "none";
+                document.getElementById("s3").style.display = "none";
+                break;
+            case "3":
+                document.getElementById("s1").style.display = "none";
+                document.getElementById("s2").style.display = "none";
+                document.getElementById("s3").style.display = "none";
+                document.getElementById("s4").style.display = "none";
+                document.getElementById("s5").style.display = "block";
+                break;
+        }
+    }
+
+    window.onload = function () {
+        if (document.getElementById("serviceSelect").value == '1') {
+            document.getElementById("s1").style.display = "block";
+            document.getElementById("s2").style.display = "block";
+            document.getElementById("s3").style.display = "block";
+            document.getElementById("s4").style.display = "block";
+            document.getElementById("s5").style.display = "none";
+        }
+        if (document.getElementById("serviceSelect").value == '2') {
+            document.getElementById("s1").style.display = "block";
+            document.getElementById("s2").style.display = "block";
+            document.getElementById("s4").style.display = "block";
+            document.getElementById("s5").style.display = "none";
+            document.getElementById("s3").style.display = "none";
+        }
+        if (document.getElementById("serviceSelect").value == '3') {
+            document.getElementById("s1").style.display = "none";
+            document.getElementById("s2").style.display = "none";
+            document.getElementById("s3").style.display = "none";
+            document.getElementById("s4").style.display = "none";
+            document.getElementById("s5").style.display = "block";
+        }
+
+    }
+</script>
+<div th:replace="/layout :: footer"></div>
+</body>
+</html>
