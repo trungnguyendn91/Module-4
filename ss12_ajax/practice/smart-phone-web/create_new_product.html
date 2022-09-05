@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new smart phone</title>
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/momo.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row w-50 mx-auto">
+            <div class="col-lg-12">
+                <h2>Create smartphone</h2>
+                <div>
+                    <p style="color: red" id="pError"></p>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="text" id="inputProducer" class="form-control" />
+                    <label class="form-label" for="inputProducer">Producer</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="text" id="inputModel" class="form-control" />
+                    <label class="form-label" for="inputModel">Model</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="text" id="inputPrice" class="form-control" />
+                    <label class="form-label" for="inputPrice">Price</label>
+                </div>
+
+
+                <button id="btnCreate" type="button" class="btn btn-primary btn-block bg-momo">
+                    Create new smart phone
+                </button>
+                <a href="http://localhost:63343/smart-phone-web/list_smartphone.html?_ijt=jpcgftcb3svrtgq90vae43h822#">
+                    <button class="btn btn-primary btn-block">
+                    Come back list
+                </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/mdb.min.js"></script>
+    <script>
+        $("#btnCreate").click(function() {
+            let producer = $("#inputProducer").val();
+            let model = $("#inputModel").val();
+            let price = $("#inputPrice").val();
+
+            let smartphoneObj = {
+                producer: producer,
+                model: model,
+                price: price,
+            };
+
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "POST", //GET, DELETE, PUT...
+                url: "http://localhost:8080/smartphones/create",
+                data: JSON.stringify(smartphoneObj),
+                success: function(resultSuccess){
+                    alert('register successfully!')
+                },
+                error: function(resultError) {
+                    alert('error');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List blog</title>
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/momo.css">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="row w-50 mx-auto">
+        <div class="col-lg-10">
+            <input class="form-control" type="text" id="keyword">
+        </div>
+        <div class="col-lg-2">
+            <button class="btn btn-primary bg-momo" id="btnSearch">Search</button>
+        </div>
+    </div>
+    <div class="row w-50 mx-auto mt-4">
+        <div class="col-lg-12">
+            <h2>List blog</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Tiêu đề</th>
+                    <th scope="col">Thể loại</th>
+                    <th scope="col" colspan="2">Action</th>
+                </tr>
+                </thead>
+                <tbody id="bodyBlog">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+    <a class="page-link" href="#" id="aNext">Next</a>
+</div>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/mdb.min.js"></script>
+<script>
+
+    let curPage = 0;
+    let bntTitle = "";
+    let size = 5
+
+    function getPageBlog(pageNumber, bntTitle, size) {
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/restBlogs/list?page=" + pageNumber + "&title=" + bntTitle + "&size=" + size,
+            success: function(blogPage){
+                let blogList = blogPage.content;
+                console.log(blogList);
+                let htmlStr = '';
+
+                for (let i = 0; i < blogList.length; i++) {
+                    htmlStr += `<tr>
+                        <td>${i + 1}</td>
+                        <td>${blogList[i].blogTitle}</td>
+                        <td>${blogList[i].category.category}</td>
+                        <td>
+                            <a href="#">Update</a>
+                        </td>
+                    </tr>`;
+                }
+
+                $("#bodyBlog").html(htmlStr);
+                console.log(htmlStr);
+            },
+            error: function(resultError) {
+
+            }
+        });
+    }
+    $("#bntTitle").click(function () {
+        bntTitle = $("#inputTitle").val();
+        getPageBlog(curPage, bntTitle)
+    });
+
+    $(document).ready(function () {
+        getPageBlog(0, "", size)
+    })
+
+
+    $("#aNext").click(function () {
+        size = size + 5;
+        getPageBlog(curPage, bntTitle, size);
+    });
+
+    // Call first
+    getPageBlog(curPage);
+</script>
+</body>
+</html>
