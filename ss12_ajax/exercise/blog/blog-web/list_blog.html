@@ -45,7 +45,7 @@
 
     let curPage = 0;
     let bntTitle = "";
-    let size = 5
+    let size =0;
 
     function getPageBlog(pageNumber, bntTitle, size) {
         $.ajax({
@@ -81,12 +81,12 @@
     });
 
     $(document).ready(function () {
-        getPageBlog(0, "", size)
+        getPageBlog(0, bntTitle, size)
     })
 
 
     $("#aNext").click(function () {
-        size = size + 5;
+        size += 2;
         getPageBlog(curPage, bntTitle, size);
     });
 

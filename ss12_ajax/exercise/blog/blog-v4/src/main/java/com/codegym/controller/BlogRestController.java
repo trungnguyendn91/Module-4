@@ -24,7 +24,7 @@ public class BlogRestController {
 
 
     @GetMapping(value = "/list")
-    public ResponseEntity<Page<Blog>> findByTitle(@RequestParam(defaultValue = "") String title,
+    public ResponseEntity<Page<Blog>> findByTitle(@RequestParam(defaultValue = "") String title,@PageableDefault(size = 3)
                                                   Pageable pageable) {
         Page<Blog> blogs = blogService.findAllByTitleContaining(title, pageable);
         if (!blogs.hasContent()) {
