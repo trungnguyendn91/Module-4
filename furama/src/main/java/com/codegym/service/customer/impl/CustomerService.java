@@ -19,13 +19,13 @@ public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerTypeRepository iCustomerTypeRepository;
     @Override
-    public Page<Customer> findAll(String customerName, String typeCustomer, Pageable pageable) {
-        return customerRepository.findAllByCustomerNameContainingAndCustomerType_GuestTypeName(customerName, typeCustomer, pageable);
+    public Page<Customer> findAll(Pageable pageable) {
+        return customerRepository.findAll(pageable);
     }
 
     @Override
-    public Page<Customer> findAllByCustomerName(String customerName, Pageable pageable) {
-        return customerRepository.findAllByCustomerNameContaining(customerName, pageable);
+    public Page<Customer> findAllByName(String keywordVal, Pageable pageable) {
+        return customerRepository.findAllByName(keywordVal, pageable);
     }
 
     @Override
@@ -40,7 +40,9 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public void delete(int id) {
-        customerRepository.delete(findCustomerById(id));
+        Customer customer = findCustomerById(id);
+        customer.setStatus(false);
+        customerRepository.save(customer);
     }
 
     @Override

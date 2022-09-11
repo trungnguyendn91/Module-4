@@ -1,65 +1,46 @@
-package com.codegym.model.customer;
+package com.codegym.dto.CustomerDto;
 
-import com.codegym.model.contract.Contract;
+import com.codegym.util.DateTime18Util;
 import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.*;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
-import java.util.Collection;
 
-@Entity
-@Table (name = "khach_hang")
-public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "ma_khach_hang")
+public class CustomerDto implements Validator {
     private int customerId;
-    @ManyToOne
-    @JoinColumn ( name = "ma_loai_khach_hang",  referencedColumnName = "ma_loai_khach_hang" )
-    private CustomerType customerType;
-    @Column (name = "ho_ten")
+    private CustomerTypeDto customerType;
+    @NotBlank(message = "Vui lòng không để trống!")
     private String customerName;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column (name = "ngay_sinh")
+
     private LocalDate customerBirth;
-    @Column (name = "gioi_tinh")
+
     private boolean customerGender;
-    @Column (name ="so_cmnd")
+
     private String customerIdCard;
-    @Column (name= "so_dien_thoai")
+    @NotBlank(message = "Vui lòng không để trống!")
+    @Pattern(regexp = "^((090)|(091)|(\\\\(84\\\\)+90)|(\\\\(84\\\\)+91))[0-9]{7}$",
+            message = "Vui lòng nhập đúng!")
     private String customerPhone;
-    @Column (name = "email")
+    @NotBlank(message = "Vui lòng không để trống!")
+    @Email(message = "Email phải đúng định dạng vd: abc@gmail.com")
+
     private String customerEmail;
-    @Column (name= "dia_chi")
+
+    @NotBlank(message = "Vui lòng không để trống!")
     private String customerAddress;
-    @OneToMany (mappedBy = "customer")
-    private Collection<Contract> contractList;
-    @Column (name = "status")
+
     private Boolean status = true;
 
-    public Collection<Contract> getContractList() {
-        return contractList;
+    public CustomerDto() {
     }
 
-    public void setContractList(Collection<Contract> contractList) {
-        this.contractList = contractList;
-    }
-
-    public boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public Customer() {
-    }
-
-    public Customer(int customerId, CustomerType customerType, String customerName,
-                    LocalDate customerBirth, boolean customerGender, String customerIdCard,
-                    String customerPhone, String customerEmail, String customerAddress,
-                    Collection<Contract> contractList, boolean status) {
+    public CustomerDto(int customerId, CustomerTypeDto customerType, String customerName,
+                       LocalDate customerBirth, boolean customerGender, String customerIdCard,
+                       String customerPhone, String customerEmail, String customerAddress, Boolean status) {
         this.customerId = customerId;
         this.customerType = customerType;
         this.customerName = customerName;
@@ -69,7 +50,6 @@ public class Customer {
         this.customerPhone = customerPhone;
         this.customerEmail = customerEmail;
         this.customerAddress = customerAddress;
-        this.contractList = contractList;
         this.status = status;
     }
 
@@ -81,11 +61,11 @@ public class Customer {
         this.customerId = customerId;
     }
 
-    public CustomerType getCustomerType() {
+    public CustomerTypeDto getCustomerType() {
         return customerType;
     }
 
-    public void setCustomerType(CustomerType customerType) {
+    public void setCustomerType(CustomerTypeDto customerType) {
         this.customerType = customerType;
     }
 
@@ -143,5 +123,35 @@ public class Customer {
 
     public void setCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        CustomerDto customerDto = (CustomerDto) target;
+
+        DateTime18Util.checkDate(target, errors);
+
+        String name = customerDto.getCustomerName();
+        if (!name.matches("^[A-Z][A-Za-z]*(\\s[A-Z][A-Za-z]*){0,20}$")) {
+            errors.rejectValue("customerName", "customerName.create", "Ký tự đầu tiên mỗi từ phải viết hoa");
+        }
+
+        String idCard = customerDto.getCustomerIdCard();
+        if (!idCard.matches("^[0-9]{9}|[0-9]{12}$")) {
+            errors.rejectValue("customerIdCard", "idCard.create", "CMND phải theo định dạng 9 hoặc 12 số");
+        }
+
     }
 }

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/layout :: head">
+<head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sửa thông tin khách hàng</title>
 </head>
 <body>
-<div  th:replace="/layout :: nav"></div>
+<div th:replace="layout :: head"></div>
+<div  th:replace="layout :: nav"></div>
 <div class="container w-50 mt-4 p-2 mb-4" style="border: 1px solid grey; border-radius: 15px">
-    <h3 align="center" class="text-info">Add new Customer</h3>
-    <form class="row g-3" action="/customers/edit" method="post" th:object="${customer}">
+    <h3 align="center" class="text-info">Sửa thông tin khách hàng</h3>
+    <form class="row g-3" action="/customers/edit" method="post" th:object="${customerDto}">
         <div class="col-md-12">
             <label for="cId" class="form-label">Id</label>
             <input type="text" readonly th:field="*{customerId}" class="form-control" id="cId">
@@ -16,7 +17,7 @@
         <div class="col-md-12">
             <label class="form-label">Loại khách </label>
             <select name="customer_type_id"  class="form-select" required th:field="*{customerType}">
-                <option th:each="guestType : ${guestTypeList}"
+                <option th:each="guestType : ${typeList}"
                         th:value="${guestType.getIdGuestType()}"
                         th:text="${guestType.getGuestTypeName()}">
                 </option>

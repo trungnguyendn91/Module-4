@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/layout :: head">
+<head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Danh Sách Dịch Vụ</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.min.js"></script>
 </head>
@@ -20,25 +20,26 @@
             </div>
         </div>
         <div class="col-lg-4 ">
-
+            <p th:text="${messService}"></p>
         </div>
         <div class="col-lg-4 ">
             <div class="container-fluid">
                 <form action="/facility/search" method="get">
-                    <input required type="text" name="search">
-                    <button type="submit">Tìm bằng tên</button>
+                    <input type="text"  name="key" th:value="${keyFacilityWord}"
+                           placeholder="Search tên dịch vụ" aria-label="Search">
+                    <button type="submit">Search</button>
                 </form>
                 </form>
             </div>
         </div>
     </div>
 </div>
-<a href="" class="container-fluid">
-    <button type="submit">Sắp xếp</button>
-</a>
+<!--<a href="" class="container-fluid">-->
+<!--    <button type="submit">Sắp xếp</button>-->
+<!--</a>-->
 
 <div>
-    <table class="table table-success table-striped" id="tableCustomer">
+    <table class="table table-success table-striped" id="tableCustomer" style="text-align: center">
         <thead>
         <tr style="text-align: center;">
             <th>STT</th>
@@ -49,11 +50,7 @@
             <th>Kiểu Thuê</th>
             <th>Loại Dịch Vụ</th>
             <th>Tiêu Chuẩn Phòng</th>
-            ;
             <th>Tiện Nghi</th>
-            <th>Diện Tích Hồ Bơi</th>
-            <th>Số Tầng</th>
-            <th>Dịch vụ đi kèm</th>
             <th>Edit</th>
             <th>xóa</th>
         </tr>
@@ -69,10 +66,6 @@
             <td th:text="${facility.serviceType.serviceTypeName}"></td>
             <td th:text="${facility.standardRoom}"></td>
             <td th:text="${facility.description}"></td>
-            <td th:text="${facility.poolArea}"></td>
-            <td th:text="${facility.numberOfFloor}"></td>
-            <td th:text="${facility.freeSerVice}"></td>
-
             <td>
                 <a type="button" class="btn btn-primary"
                    th:href="@{/facility/editService(id=${facility.facilityId})}">

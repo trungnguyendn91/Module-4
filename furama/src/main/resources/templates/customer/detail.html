@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <title>Thông tin khách hàng</title>
+</head>
+<div th:replace="layout :: head"></div>
+<body style="background-color: powderblue">
+<div  th:replace="layout :: nav"></div>
+<div class="container w-50 mt-4 p-2 mb-4" style="border: 1px solid grey; border-radius: 15px">
+    <h3 align="center" class="text-info">Thông tin khách hàng</h3>
+    <div style="text-align: center">
+        <div class="col-md-12">
+            <label class="form-label">ID: </label>
+            <span th:text="${customer.customerId}" ></span>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Loại khách: </label>
+            <span th:text="${customer.customerType.guestTypeName}" ></span>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Họ tên: </label>
+            <span th:text="${customer.customerName}" ></span>
+
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Ngày sinh: </label>
+            <span th:text="${customer.customerBirth}" ></span>
+
+        </div>
+        <div class="col-md-12">
+            <label  class="form-label me-4">Giới tính: </label>
+            <span th:text="${customer.customerGender}"  ></span>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Số CMND/CCCD: </label>
+            <span th:text="${customer.customerIdCard}" ></span>
+
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Số Điện Thoại: </label>
+            <span th:text="${customer.customerPhone}" ></span>
+
+        </div>
+        <div class="col-md-12 " id="s1" >
+            <label class="form-label">Email: </label>
+            <span th:text="${customer.customerEmail}"  ></span>
+
+        </div>
+
+        <div class="col-md-12 " id="s2" >
+            <label class="form-label">Địa chỉ: </label>
+            <span th:text="${customer.customerAddress}" ></span>
+        </div>
+        <div class="col-12 ">
+            <a th:href="@{/customers/search}"><button class="btn btn-primary">Quay lại</button></a>
+        </div>
+    </div>
+</div>
+<div th:replace="/layout :: footer"></div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

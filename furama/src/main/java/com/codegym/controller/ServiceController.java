@@ -11,6 +11,9 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping ("/facility")
@@ -23,8 +26,11 @@ public class ServiceController {
     private IServiceTypeService serviceTypeService;
 
   @GetMapping (value = {"", "/search"})
-    public String showFacility (Model model){
-    model.addAttribute("facilityList", facilityService.findAll());
+    public String showFacility (Model model, @RequestParam Optional<String> key,
+                                @ModelAttribute("facility") Facility facility){
+      String keyFacility = key.orElse("");
+    model.addAttribute("facilityList", facilityService.findByFacilityName(keyFacility));
+    model.addAttribute("keyFacilityWord", keyFacility);
     model.addAttribute("rentType", rentTypeService.findAll());
     model.addAttribute("serviceType",serviceTypeService.findAll());
     return "/service/list_service";
@@ -37,8 +43,9 @@ public class ServiceController {
       return "/service/new_service";
   }
   @PostMapping ("/saveService")
-  public String addNewService(@ModelAttribute Facility facility) {
+  public String addNewService(@ModelAttribute Facility facility, RedirectAttributes redirect) {
       facilityService.save(facility);
+      redirect.addFlashAttribute("messService", "Thêm mới thành công");
       return "redirect:/facility/";
   }
     @GetMapping("/editService")
@@ -50,13 +57,15 @@ public class ServiceController {
     }
 
     @PostMapping("/edit")
-    public String editFacility(@ModelAttribute Facility facility) {
+    public String editFacility(@ModelAttribute Facility facility, RedirectAttributes redirect) {
         facilityService.save(facility);
+        redirect.addFlashAttribute("messService", "Thay đổi thành công");
         return "redirect:/facility/";
     }
     @PostMapping("/delete")
-    public String deleteFacility(@RequestParam Integer id){
+    public String deleteFacility(@RequestParam Integer id, RedirectAttributes redirect){
         facilityService.delete(id);
+        redirect.addFlashAttribute("messService", "Xóa thành công");
         return "redirect:/facility/";
     }
 

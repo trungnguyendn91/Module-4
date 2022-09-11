@@ -37,6 +37,11 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
+    public List<Facility> findByFacilityName(String facilityName) {
+        return facilityRepository.findAllByFacilityNameContaining(facilityName);
+    }
+
+    @Override
     public List<Facility> search() {
         return facilityRepository.findAll();
     }

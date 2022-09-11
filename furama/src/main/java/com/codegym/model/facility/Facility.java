@@ -1,6 +1,9 @@
 package com.codegym.model.facility;
 
+import com.codegym.model.contract.Contract;
+
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table (name = "dich_vu")
@@ -33,6 +36,9 @@ public class Facility {
     private int numberOfFloor;
     @Column (name = "dich_vu_mien_phi_di_kem")
     private String freeSerVice;
+
+    @OneToMany (mappedBy = "facility")
+    private Collection<Contract> contractList;
 
     public Facility() {
     }
