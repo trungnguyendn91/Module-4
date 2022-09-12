@@ -12,9 +12,9 @@ public interface IFacilityService {
 
     void delete(Integer id);
 
-    List<Facility> findAll();
+    Page<Facility> findAll(Pageable pageable);
 
-    List<Facility> findByFacilityName(String facilityName);
+    Page<Facility> findByFacilityName(String keywordVal,Pageable pageable);
 
     List<Facility> search();
 

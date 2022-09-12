@@ -28,17 +28,19 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public void delete(Integer id) {
-       facilityRepository.delete(findById(id));
+        Facility facility = findById(id);
+        facility.setStatus(false);
+        facilityRepository.save(facility);
     }
 
     @Override
-    public List<Facility> findAll() {
-        return facilityRepository.findAll();
+    public Page<Facility> findAll(Pageable pageable) {
+        return facilityRepository.findAll(pageable);
     }
 
     @Override
-    public List<Facility> findByFacilityName(String facilityName) {
-        return facilityRepository.findAllByFacilityNameContaining(facilityName);
+    public Page<Facility> findByFacilityName(String keywordVal, Pageable pageable) {
+        return facilityRepository.findAllByName(keywordVal, pageable);
     }
 
     @Override

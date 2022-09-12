@@ -28,6 +28,9 @@ public class Employee {
     @Column (name = "dia_chi")
     private String addressEmployee;
 
+    @Column (name = "status")
+    private Boolean status = true;
+
     @ManyToOne
     @JoinColumn (name = "ma_vi_tri",  referencedColumnName = "ma_vi_tri")
     private  Position position;

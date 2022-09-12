@@ -30,7 +30,8 @@
         </div>
         <div class="col-md-12">
             <label  class="form-label me-4">Giới tính: </label>
-            <span th:text="${customer.customerGender}"  ></span>
+            <span th:if="${customer.customerGender}">nam</span>
+            <span th:unless="${customer.customerGender}">nữ</span>
         </div>
         <div class="col-md-12">
             <label class="form-label">Số CMND/CCCD: </label>

@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-12">
             <label class="form-label">Loại khách </label>
-            <select name="customer_type_id"  class="form-select" required th:field="*{customerType}">
+            <select name="customer_type_id"  class="form-select" required th:field="*{customerType.idGuestType}">
                 <option th:each="guestType : ${typeList}"
                         th:value="${guestType.getIdGuestType()}"
                         th:text="${guestType.getGuestTypeName()}">

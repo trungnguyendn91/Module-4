@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <title>Thông tin khách hàng</title>
+</head>
+<div th:replace="layout :: head"></div>
+<body style="background-color: powderblue">
+<div  th:replace="layout :: nav"></div>
+<div class="container w-50 mt-4 p-2 mb-4" style="border: 1px solid grey; border-radius: 15px">
+    <h3 align="center" class="text-info">Thông tin khách hàng</h3>
+    <div style="text-align: center">
+        <div class="col-md-12">
+            <label class="form-label">ID: </label>
+            <span th:text="${facility.facilityId}" ></span>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Tên dịch vụ </label>
+            <span th:text="${facility.facilityName}" ></span>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Diện Tích(m <sup>2</sup>) </label>
+            <span th:text="${facility.facilityArea}" ></span>
+
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Giá thuê: </label>
+            <span th:text="${facility.facilityCost}" ></span>
+
+        </div>
+        <div class="col-md-12">
+            <label  class="form-label me-4">Số lượng người tối đa: </label>
+            <span th:text="${facility.facilityMaxPeople}" ></span>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Kiểu thuê: </label>
+            <span th:text="${facility.rentalType.rentTypeName}" ></span>
+
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Tiêu chuẩn phòng: </label>
+            <span th:text="${facility.standardRoom}" ></span>
+
+        </div>
+        <div class="col-md-12 " id="s1" >
+            <label class="form-label">Mô tả tiện nghi khác: </label>
+            <span th:text="${facility.description}"  ></span>
+
+        </div>
+
+        <div class="col-md-12 " id="s2" >
+            <label class="form-label">Diện tích hồ bơi: </label>
+            <span th:text="${facility.poolArea}" ></span>
+        </div>
+        <div class="col-md-12 "  >
+            <label class="form-label">Số tầng: </label>
+            <span th:text="${facility.numberOfFloor}" ></span>
+        </div>
+        <div class="col-md-12 "  >
+            <label class="form-label">Dịch vụ miễn phí đi kèm: </label>
+            <span th:text="${facility.freeSerVice}" ></span>
+        </div>
+        <div class="col-12 ">
+            <a th:href="@{/facility/search}"><button class="btn btn-primary">Quay lại</button></a>
+        </div>
+    </div>
+</div>
+<div th:replace="/layout :: footer"></div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

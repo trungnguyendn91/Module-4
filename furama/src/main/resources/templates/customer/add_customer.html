@@ -13,8 +13,8 @@
     <form class="row g-3" action="/customers/save" method="post" th:object="${customerDto}">
         <div class="col-md-12">
             <label class="form-label">Loại khách </label>
-            <select name="customer_type_id"  class="form-select" required th:field="*{customerType}">
-                <option value="None" disabled selected>Chọn loại khách</option>
+            <select name="customer_type_id"  class="form-select" required th:field="*{customerType.idGuestType}">
+                <option value="0">Chọn loại khách</option>
                 <option th:each="guestType : ${guestTypeList}"
                         th:value="${guestType.getIdGuestType()}"
                         th:text="${guestType.getGuestTypeName()}">

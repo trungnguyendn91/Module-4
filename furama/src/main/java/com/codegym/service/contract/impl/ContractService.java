@@ -7,7 +7,6 @@ import com.codegym.model.contract.DetailContract;
 import com.codegym.repository.IAttachServiceRepository;
 import com.codegym.repository.IContractRepository;
 import com.codegym.repository.IDetailContractRepository;
-import com.codegym.service.contract.IAttachFacilityService;
 import com.codegym.service.contract.IContractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

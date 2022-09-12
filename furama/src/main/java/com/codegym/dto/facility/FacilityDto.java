@@ -1,70 +1,53 @@
-package com.codegym.model.facility;
+package com.codegym.dto.facility;
 
 import com.codegym.model.contract.Contract;
+import com.codegym.model.facility.RentType;
+import com.codegym.model.facility.ServiceType;
+import com.codegym.util.Validation;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 
-@Entity
-@Table (name = "dich_vu")
-public class Facility {
-    @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column (name = "ma_dich_vu")
+public class FacilityDto implements Validator {
+
     private int facilityId;
-    @Column (name = "ten_dich_vu")
+
+
     private String facilityName;
-    @Column (name = "dien_tich")
+
     private int facilityArea;
-    @Column (name = "gia_thue")
+
     private double facilityCost;
-    @Column (name = "so_nguoi_toi_da")
+
     private int facilityMaxPeople;
-    @ManyToOne
-    @JoinColumn (name = "ma_kieu_thue", referencedColumnName = "ma_kieu_thue")
+
     private RentType rentalType;
-    @ManyToOne
-    @JoinColumn (name = "ma_loai_dich_vu", referencedColumnName = "ma_loai_dich_vu")
+
     private ServiceType serviceType;
-    @Column (name = "tieu_chuan_phong")
+
     private String standardRoom;
-    @Column (name = "mo_ta_tien_nghi_khac")
+
     private String description;
-    @Column (name = "dien_tich_ho_boi")
+
     private double poolArea;
-    @Column (name = "so_tang")
+
     private int numberOfFloor;
-    @Column (name = "dich_vu_mien_phi_di_kem")
+
     private String freeSerVice;
-    @Column (name = "status")
-    private Boolean status = true;
 
-    @OneToMany (mappedBy = "facility")
-    private Collection<Contract> contractList;
-
-    public Facility() {
+    public FacilityDto() {
     }
 
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
-    public Collection<Contract> getContractList() {
-        return contractList;
-    }
-
-    public void setContractList(Collection<Contract> contractList) {
-        this.contractList = contractList;
-    }
-
-    public Facility(int facilityId, String facilityName, int facilityArea, double facilityCost,
-                    int facilityMaxPeople, RentType rentalType, ServiceType serviceType,
-                    String standardRoom, String description, double poolArea, int numberOfFloor,
-                    String freeSerVice, Boolean status, Collection<Contract> contractList) {
+    public FacilityDto(int facilityId, String facilityName, int facilityArea,
+                       double facilityCost, int facilityMaxPeople, RentType rentalType,
+                       ServiceType serviceType, String standardRoom, String description,
+                       double poolArea, int numberOfFloor, String freeSerVice) {
         this.facilityId = facilityId;
         this.facilityName = facilityName;
         this.facilityArea = facilityArea;
@@ -77,8 +60,6 @@ public class Facility {
         this.poolArea = poolArea;
         this.numberOfFloor = numberOfFloor;
         this.freeSerVice = freeSerVice;
-        this.status = status;
-        this.contractList = contractList;
     }
 
     public int getFacilityId() {
@@ -175,5 +156,39 @@ public class Facility {
 
     public void setFreeSerVice(String freeSerVice) {
         this.freeSerVice = freeSerVice;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        FacilityDto facilityDto = (FacilityDto) target;
+
+        String maxPeople = String.valueOf(facilityDto.getFacilityMaxPeople());
+        Validation.checkInteger("facilityMaxPeople", maxPeople, errors);
+
+        String area = String.valueOf((facilityDto.getFacilityArea()));
+        Validation.checkInteger("facilityArea", area, errors);
+
+        Double cost = facilityDto.getFacilityCost();
+        Validation.checkDouble("facilityCost", cost, errors);
+
+        String nameService = facilityDto.getFacilityName();
+        Validation.checkFacilityName("facilityName", nameService, errors);
+
+        if (facilityDto.getServiceType() != null) {
+            Integer serviceTypeId = facilityDto.getServiceType().getServiceTypeId();
+            if (serviceTypeId < 2) {
+                Double areaPool = facilityDto.getPoolArea();
+                Validation.checkDouble("poolArea", areaPool, errors);
+            }
+            if (serviceTypeId < 3) {
+                String numberOfFloors = String.valueOf((facilityDto.getNumberOfFloor()));
+                Validation.checkInteger("numberOfFloor", numberOfFloors, errors);
+            }
+        }
     }
 }

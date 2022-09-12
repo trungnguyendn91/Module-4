@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IDetailContractService {
 
-    List<DetailContract> findAll();
+    List<DetailContract> finAllByIDContract(Integer id);
 
-    DetailContract save(DetailContract detailContract);
+    void create(DetailContract detailContract);
 }

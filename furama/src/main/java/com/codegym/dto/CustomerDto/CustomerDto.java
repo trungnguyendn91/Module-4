@@ -12,7 +12,6 @@ import java.time.LocalDate;
 public class CustomerDto implements Validator {
     private int customerId;
     private CustomerTypeDto customerType;
-    @NotBlank(message = "Vui lòng không để trống!")
     private String customerName;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
 
@@ -144,7 +143,8 @@ public class CustomerDto implements Validator {
         DateTime18Util.checkDate(target, errors);
 
         String name = customerDto.getCustomerName();
-        if (!name.matches("^[A-Z][A-Za-z]*(\\s[A-Z][A-Za-z]*){0,20}$")) {
+        if (!name.matches("^[A-ZĐ][a-zỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâ]+" +
+                "( [A-ZĐ][a-zỳọáầảấờễàạằệếýộậốũứĩõúữịỗìềểẩớặòùồợãụủíỹắẫựỉỏừỷởóéửỵẳẹèẽổẵẻỡơôưăêâ]*)*$")) {
             errors.rejectValue("customerName", "customerName.create", "Ký tự đầu tiên mỗi từ phải viết hoa");
         }
 

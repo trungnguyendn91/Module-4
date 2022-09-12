@@ -7,6 +7,7 @@
     <script src="../js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: powderblue">
+<div th:replace="layout :: head"></div>
 <div th:replace="/layout :: nav"></div>
 <H3 style="text-align: center">Danh Sách Các Dịch Vụ</H3>
 <div class>
@@ -49,25 +50,29 @@
             <th>Số Người</th>
             <th>Kiểu Thuê</th>
             <th>Loại Dịch Vụ</th>
-            <th>Tiêu Chuẩn Phòng</th>
-            <th>Tiện Nghi</th>
+            <th>View</th>
             <th>Edit</th>
             <th>xóa</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="facility, loop:${facilityList}">
-            <td th:text="${loop.count}"></td>
+            <td th:text="${loop.count + 5 * facilityList.number}"></td>
             <td th:text="${facility.facilityName}"></td>
             <td th:text="${facility.facilityArea}"></td>
-            <td th:text="${facility.facilityCost}"></td>
+            <td th:text="${#numbers.formatCurrency(facility.facilityCost)}"></td>
             <td th:text="${facility.facilityMaxPeople}"></td>
             <td th:text="${facility.rentalType.rentTypeName}"></td>
             <td th:text="${facility.serviceType.serviceTypeName}"></td>
-            <td th:text="${facility.standardRoom}"></td>
-            <td th:text="${facility.description}"></td>
             <td>
-                <a type="button" class="btn btn-primary"
+                <a th:href="@{/facility/{id}/view(id=${facility.facilityId})}">
+                    <button type="button" class="btn btn-outline-danger">
+                        View
+                    </button>
+                </a>
+            </td>
+            <td>
+                <a type="button" class="btn btn-outline-danger"
                    th:href="@{/facility/editService(id=${facility.facilityId})}">
                     Sửa
                 </a>
@@ -80,6 +85,21 @@
             </td>
         </tr>
     </table>
+    <div>
+        <div class="col-lg-12">
+            <a th:href="@{/facility(page=${facilityList.number - 1 })}"
+               th:if="${facilityList.hasPrevious()}">
+                Previous
+            </a>
+            <span th:text="${facilityList.number + 1}"></span>
+            /
+            <span th:text="${facilityList.totalPages}"></span>
+            <a th:href="@{/facility(page=${facilityList.number + 1 })}"
+               th:if="${facilityList.hasNext()}">
+                Next
+            </a>
+        </div>
+    </div>
     <form th:action="@{/facility/delete}" method="post">
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">

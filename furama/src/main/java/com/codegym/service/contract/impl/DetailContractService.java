@@ -11,13 +11,14 @@ import java.util.List;
 public class DetailContractService implements IDetailContractService {
     @Autowired
     IDetailContractRepository detailContractRepository;
+
     @Override
-    public List<DetailContract> findAll() {
-        return detailContractRepository.findAll();
+    public List<DetailContract> finAllByIDContract(Integer id) {
+        return detailContractRepository.findAllByContract_IdContract(id);
     }
 
     @Override
-    public DetailContract save(DetailContract detailContract) {
-        return detailContractRepository.save(detailContract);
+    public void create(DetailContract detailContract) {
+        detailContractRepository.save(detailContract);
     }
 }

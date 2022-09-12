@@ -23,20 +23,11 @@
         </div>
         <div class="col-lg-4 ">
             <div class="container-fluid">
-                <div class="row">
-                    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-                        <div class="container-fluid">
-                            <div class="collapse navbar-collapse" id="mynavbar">
-                                <ul class="navbar-nav me-auto">
-                                </ul>
-                                <form class="d-flex" action="/customers/search">
-                                    <input class="form-control me-2" type="text" placeholder="Search tên khách hàng" name="keyword">
-                                    <button type="submit">Search</button>
-                                </form>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
+                <form action="/customers/search" method="get">
+                    <input type="text"  name="key" th:value="${keyword}"
+                           placeholder="Search tên dịch vụ" aria-label="Search">
+                    <button type="submit">Search</button>
+                </form>
             </div>
         </div>
     </div>
@@ -54,7 +45,7 @@
             <th>Delete</th>
         </tr>
        <tr th:each="customer, status : ${customerList}">
-           <td th:text="${status.count}"></td>
+           <td th:text="${status.count + 5 * customerList.number}"></td>
            <td th:text="${customer.customerName}"></td>
            <td th:text="${customer.getCustomerType().guestTypeName}"></td>
            <td th:text="${customer.customerBirth}"></td>
